@@ -34,7 +34,7 @@ public class GeoSpace {
       System.out.print("4. -> DISTANCE FROM MANTA TO QUITO \n");
       System.out.print("5. -> DISTANCE FROM RIOBAMBA TO QUITO \n" );
       System.out.print("6. -> DISTANCE FROM QUITO TO ESMERALDAS \n");
-      System.out.print("7. -> DISTANCE FROM Ibarra TO QUITO \n");
+      System.out.print("7. -> DISTANCE FROM IBARRA TO QUITO \n");
       
         System.out.print("8. -> Exit \n");
       
