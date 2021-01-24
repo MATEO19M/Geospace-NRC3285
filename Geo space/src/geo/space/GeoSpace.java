@@ -34,3 +34,30 @@ public class GeoSpace {
             option = input.nextInt();
 
            switch (option) { 
+               
+           }
+           case 2:
+                    double d;
+                    System.out.println("Enter Distance:");
+                    d = input.nextInt();
+                System.out.println(" ======= Choose Orientation =======");
+                System.out.println("1. North-East (NE) ");
+                System.out.println("2. North-West (NO) ");
+                System.out.println("3. South-West (SO) ");
+                System.out.println("4. South-East (SE) ");
+                option = input.nextInt();
+
+                switch (option) {
+                case 1:
+                double x2;
+                double y2;
+                double ann;
+                System.out.println("Enter Angle:");
+                ann = input.nextInt();
+                double annr = Math.toRadians(ann);
+                double annsrx=Math.sin(annr);
+                double annsry=Math.cos(annr);
+                x2=d*annsrx; 
+                y2=d*annsry; 
+                System.out.println("The coordinate is:  X=" + String.format("%.2f",x2)+", Y="+String.format("%.2f",y2)); 
+                break;
