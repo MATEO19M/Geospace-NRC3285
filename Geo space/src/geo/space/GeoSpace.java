@@ -26,9 +26,9 @@ public class GeoSpace {
             System.out.print("PROGRAMMING FUNDAMENTALS \n");
             System.out.println( " NRC:3285");
       
-           System.out.println(" ========= Transformación de Coordenadas =======");
-            System.out.println("1.Transformación de Coordenas Rectangulares a Geográficas ");
-            System.out.println("2.Transformación de Coordenadas Geográficas a Rectangulares ");
+           System.out.println(" ========= Coordinate Transformation =======");
+            System.out.println("1.Transformation from Rectangular to Geographic Coordinates ");
+            System.out.println("2.Transformation of Geographic Coordinates to Rectangular ");
             System.out.println("0.Exit");
             System.out.println("Enter your menu option --> ");
             option = input.nextInt();
