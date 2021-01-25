@@ -88,9 +88,7 @@ public class GeoSpace {
                 System.out.println("The coordinate is:  X=" + String.format("%.2f",x2)+", Y="+String.format("%.2f",y2)); 
                 break;
                 case 3:
-                double x4;
-                double y4;
-                double ann2;
+               
                 System.out.println("Enter Angle:");
                  }                                                                      
                 case 0:                                                               
