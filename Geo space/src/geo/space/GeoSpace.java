@@ -91,7 +91,7 @@ public class GeoSpace {
                
                 System.out.println("Enter Angle:");
                   
-                case 4:                                                                 //Luje
+                case 4:                                                                
                 double x5;
                 double y5;
                 double ann3;
@@ -103,7 +103,7 @@ public class GeoSpace {
                 x5= d*annsrx3; 
                 y5=d*annsry3; 
                 System.out.println("La coordenada es:  X=" + String.format("%.2f",x5)+", Y=-"+String.format("%.2f",y5));
-                break;                                                                 //Luje
+                break;                                                                 
                 }  
                 case 0:                                                               
                     System.out.println("Good Bye my friend");
