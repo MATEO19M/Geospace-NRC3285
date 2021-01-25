@@ -14,7 +14,7 @@ public class GeoSpace {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+       public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
         boolean mainLoop = true;
         int option;
@@ -74,7 +74,7 @@ public class GeoSpace {
                 option = input.nextInt();
 
                 switch (option) {
-           case 1:
+                case 1:
                 double x2;
                 double y2;
                 double ann;
@@ -87,8 +87,11 @@ public class GeoSpace {
                 y2=d*annsry; 
                 System.out.println("The coordinate is:  X=" + String.format("%.2f",x2)+", Y="+String.format("%.2f",y2)); 
                 break;
-                
-           case 4:                                                               
+                case 3:
+               
+                System.out.println("Enter Angle:");
+                  
+                case 4:                                                                 //Luje
                 double x5;
                 double y5;
                 double ann3;
@@ -97,11 +100,11 @@ public class GeoSpace {
                 double annr3 = Math.toRadians(ann3);
                 double annsrx3=Math.sin(annr3);
                 double annsry3=Math.cos(annr3);
-                x5= d *annsrx3; 
+                x5= d*annsrx3; 
                 y5=d*annsry3; 
                 System.out.println("La coordenada es:  X=" + String.format("%.2f",x5)+", Y=-"+String.format("%.2f",y5));
-                break;                                                                 
-           }                                        
+                break;                                                                 //Luje
+                }  
                 case 0:                                                               
                     System.out.println("Good Bye my friend");
                     System.exit(0);
@@ -112,8 +115,8 @@ public class GeoSpace {
             }
 
         } while (option != 0);
-
-    }
-}
+        }
+        }
+ 
 
           
