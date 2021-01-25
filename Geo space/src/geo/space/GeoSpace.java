@@ -87,6 +87,19 @@ public class GeoSpace {
                 y2=d*annsry; 
                 System.out.println("The coordinate is:  X=" + String.format("%.2f",x2)+", Y="+String.format("%.2f",y2)); 
                 break;
+				 case 2:                                                             //Martinez
+                double x3;
+                double y3;
+                double ann1;
+                System.out.println("Enter Angle:");
+                ann1 = input.nextInt();
+                double annr1 = Math.toRadians(ann1);
+                double annsrx1=Math.sin(annr1);
+                double annsry1=Math.cos(annr1);
+                x3=d*annsrx1; 
+                y3=d*annsry1; 
+                System.out.println("The coordinate is:  X=-" + String.format("%.2f",x3)+", Y="+String.format("%.2f",y3));
+                break;
                   case 3:
                 double x4;
                 double y4;
