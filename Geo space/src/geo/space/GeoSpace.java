@@ -95,14 +95,14 @@ public class GeoSpace {
                 double x5;
                 double y5;
                 double ann3;
-                System.out.println("Ingrese el angulo:");
+                System.out.println("Enter the angle:");
                 ann3 = input.nextInt();
                 double annr3 = Math.toRadians(ann3);
                 double annsrx3=Math.sin(annr3);
                 double annsry3=Math.cos(annr3);
                 x5= d*annsrx3; 
                 y5=d*annsry3; 
-                System.out.println("La coordenada es:  X=" + String.format("%.2f",x5)+", Y=-"+String.format("%.2f",y5));
+                System.out.println("The coordinate is:  X=" + String.format("%.2f",x5)+", Y=-"+String.format("%.2f",y5));
                 break;                                                                 
                 }  
                 case 0:                                                               
