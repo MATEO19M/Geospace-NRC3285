@@ -22,9 +22,7 @@ public class GeoSpace {
         int option;
 
         do {
-<<<<<<< HEAD
-                     
-            option = printConversionMenu(input);
+  option = printConversionMenu(input);
 
             switch (option) {                 
                     case 1:
@@ -41,55 +39,11 @@ public class GeoSpace {
                     System.out.println("please enter");
                     printRectangularToGeographicCoordinates(totalOf, input, x, y, angleF);
 
-                transformRectangularToGeographicCoordinates(totalOf, input, x, y, angleF);
+                    transformRectangularToGeographicCoordinates(totalOf, input, x, y, angleF);
 
-                    break;     
-           case 2:
-=======
-
-            System.out.print("                   UNIVERSIDAD DE LAS FUERZAS ARMADAS (ESPE)\n\n       ");
-            System.out.print(" CAREER: Engineering in Geospatial Technologies\n ");
-            System.out.print("PROGRAMMING FUNDAMENTALS \n");
-            System.out.println(" NRC:3285");
-
-            System.out.println(" ========= Coordinate Transformation =======");
-            System.out.println("1.Transformation from Rectangular to Geographic Coordinates ");
-            System.out.println("2.Transformation of Geographic Coordinates to Rectangular ");
-            System.out.println("0.Exit");
-            System.out.println("Enter your menu option --> ");
-            option = input.nextInt();
-
-            switch (option) {
-                case 1:
-                    double x = 0;
-                    double y = 0;
-                    double r = 0;
-                    double angleF;
-                    System.out.println("Enter rectangular coordinate x: ");
-                    x = input.nextInt();
-                    System.out.println("Enter rectangular coordinate y: ");
-                    y = input.nextInt();
-                    double p1 = x * x;
-                    double p2 = y * y;
-                    double p3 = p1 + p2;
-                    double angleC = Math.atan(y / x);
-                    double angle = Math.toDegrees(angleC);
-                    if (x > 0 && y > 0) {
-                        angleF = (90 - angle);
-                        System.out.println("The coordinate is :  " + String.format("%.2f", Math.sqrt(p3)) + ", N" + String.format("%.2f", angleF) + "ºE");
-                    } else if (x < 0 && y > 0) {
-                        angleF = (90 + angle);
-                        System.out.println("The coordinate is   " + String.format("%.2f", Math.sqrt(p3)) + ", N" + String.format("%.2f", angleF) + "ºO");
-                    } else if (x < 0 && y < 0) {
-                        angleF = (90 - angle);
-                        System.out.println("The coordinate is :  " + String.format("%.2f", Math.sqrt(p3)) + ", S" + String.format("%.2f", angleF) + "ºO");
-                    } else if (x > 0 && y < 0) {
-                        angleF = (90 + angle);
-                        System.out.println("The coordinate is :  " + String.format("%.2f", Math.sqrt(p3)) + ", S" + String.format("%.2f", angleF) + "ºE");
-                    }
-                    break;
+                    break;    
                 case 2:
->>>>>>> e2e562b9da00c6f24a4f41bd4876555f6e198099
+
                     double d;
                     System.out.println("Enter Distance:");
                     d = input.nextInt();
@@ -165,9 +119,7 @@ public class GeoSpace {
             }
 
         } while (option != 0);
-<<<<<<< HEAD
-        }
-        
+    }
  
  private static int printConversionMenu(Scanner input) {            
         int option;
@@ -224,11 +176,9 @@ public class GeoSpace {
                 System.out.println("The coordinate is :  " + String.format("%.2f", Math.sqrt(p3)) + ", S" + String.format("%.2f", angleF) + "ºE");
                 break;
             }
-        
+        }
+    }
+}
 
     
           
-=======
-    }
-}
->>>>>>> e2e562b9da00c6f24a4f41bd4876555f6e198099
