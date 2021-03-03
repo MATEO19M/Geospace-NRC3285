@@ -37,9 +37,9 @@ public class GeoSpace {
 
             switch (option) {
                 case 1:
-                    double x = 0;
-                    double y = 0;
-                    double r = 0;
+                    double x;
+                    double y;
+                    double r;
                     double angleF;
                     System.out.println("Enter rectangular coordinate x: ");
                     x = input.nextInt();
@@ -65,9 +65,9 @@ public class GeoSpace {
                     }
                     break;
                 case 2:
-                    double d;
-                    System.out.println("Enter Distance:");
-                    d = input.nextInt();
+                    double distance = showGeographicCoordinatesMenu(input);
+                    option = input.nextInt();
+
                     System.out.println(" ====== Choose Orientation ======");
                     System.out.println("1. North-East (NE) ");
                     System.out.println("2. North-West (NO) ");
@@ -77,59 +77,47 @@ public class GeoSpace {
 
                     switch (option) {
                         case 1:
-                            double x2;
-                            double y2;
-                            double ann;
-                            System.out.println("Enter Angle:");
-                            ann = input.nextInt();
-                            double annr = Math.toRadians(ann);
-                            double annsrx = Math.sin(annr);
-                            double annsry = Math.cos(annr);
-                            x2 = d * annsrx;
-                            y2 = d * annsry;
-                            System.out.println("The coordinate is:  X=" + String.format("%.2f", x2) + ", Y=" + String.format("%.2f", y2));
+                            transformCoordinateNorthToEast(input, distance);
                             break;
                         case 2:
-                            double x3;
-                            double y3;
-                            double ann1;
-                            System.out.println("Enter Angle:");
-                            ann1 = input.nextInt();
-                            double annr1 = Math.toRadians(ann1);
-                            double annsrx1 = Math.sin(annr1);
-                            double annsry1 = Math.cos(annr1);
-                            x3 = d * annsrx1;
-                            y3 = d * annsry1;
-                            System.out.println("The coordinate is:  X=-" + String.format("%.2f", x3) + ", Y=" + String.format("%.2f", y3));
+                            transformGeographicCoordinatesNorthToWest(input, distance);
                             break;
+
                         case 3:
-                            double x4;
-                            double y4;
-                            double ann2;
-                            System.out.println("Enter Angle:");
-                            ann2 = input.nextInt();
-                            double annr2 = Math.toRadians(ann2);
-                            double annsrx2 = Math.sin(annr2);
-                            double annsry2 = Math.cos(annr2);
-                            x4 = d * annsrx2;
-                            y4 = d * annsry2;
-                            System.out.println("The coordinate is:  X=-" + String.format("%.2f", x4) + ", Y=-" + String.format("%.2f", y4));
+                            transformGeographicCoordinatesSouthToWest(input, distance);
                             break;
 
                         case 4:
-                            double x5;
-                            double y5;
-                            double ann3;
-                            System.out.println("Enter the angle:");
-                            ann3 = input.nextInt();
-                            double annr3 = Math.toRadians(ann3);
-                            double annsrx3 = Math.sin(annr3);
-                            double annsry3 = Math.cos(annr3);
-                            x5 = d * annsrx3;
-                            y5 = d * annsry3;
-                            System.out.println("The coordinate is:  X=" + String.format("%.2f", x5) + ", Y=-" + String.format("%.2f", y5));
+                            transformGeographicCoordinatesSouthToEast(input, distance);
                             break;
                     }
+                    break;
+                case 3:
+                    int total = 0;
+                    System.out.print(" Enter the number of times you want to perform menu 1 -> ");
+                    total = input.nextInt();
+                    for (int i = 0; i < total; i++) {
+                        double dis;
+                        double[] x1;
+                        double[] y1;
+                        double[] x2;
+                        double[] y2;
+                        double variationX;
+                        double variationY;
+                        double azimut = 0;
+                        x1 = new double[total];
+
+                        x1 = new double[total];
+                        y1 = new double[total];
+                        x2 = new double[total];
+                        y2 = new double[total];
+
+                        azimut = transformGeographicCoordinatesToPolar(x1, i, input, y1, x2, y2);
+
+                        // Transformation from decimals to sexagecimals
+                        printDecimalToSexagecimalTransformation(azimut);
+                    }
+                    break;
                 case 0:
                     System.out.println("Good Bye my friend");
                     System.exit(0);
