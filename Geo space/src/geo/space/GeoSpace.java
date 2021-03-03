@@ -26,7 +26,7 @@ public class GeoSpace {
 
             switch (option) {
                 
-case 1:
+                case 1:
                     double x;
                     double y;
                     double r;
@@ -182,5 +182,5 @@ case 1:
         System.out.println("3. South-West (SO) ");
         System.out.println("4. South-East (SE) ");
         return d;
-    }    
+    }   
 }
