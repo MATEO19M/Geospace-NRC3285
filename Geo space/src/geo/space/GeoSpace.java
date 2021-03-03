@@ -21,47 +21,26 @@ public class GeoSpace {
         
         do {
                      
-            System.out.print("                   UNIVERSIDAD DE LAS FUERZAS ARMADAS (ESPE)\n\n       " );
-            System.out.print(" CAREER: Engineering in Geospatial Technologies\n ");
-            System.out.print("PROGRAMMING FUNDAMENTALS \n");
-            System.out.println( " NRC:3285");
-      
-            System.out.println(" ========= Coordinate Transformation =======");
-            System.out.println("1.Transformation from Rectangular to Geographic Coordinates ");
-            System.out.println("2.Transformation of Geographic Coordinates to Rectangular ");
-            System.out.println("0.Exit");
-            System.out.println("Enter your menu option --> ");
-            option = input.nextInt();
+            option = printConversionMenu(input);
 
-           switch (option) { 
-            case 1:
-                    double x;
-                    double y;
-                    double r;
-                    double angleF;
-                    System.out.println("Enter rectangular coordinate x: ");
-                    x = input.nextInt();
-                    System.out.println("Enter rectangular coordinate y: ");
-                    y = input.nextInt();
-                    double p1 = x*x;
-                    double p2 = y*y;
-                    double p3 = p1+p2;
-                    double angleC = Math.atan(y/x);
-                    double angle  = Math.toDegrees(angleC);
-                    if (x >0 && y>0){
-                    angleF= (90-angle); 
-                    System.out.println("The coordinate is :  " + String.format("%.2f",Math.sqrt(p3))+ ", N"+String.format("%.2f",angleF)+ "ºE");
-                    }else if(x <0 && y>0){
-                    angleF= (90+angle); 
-                    System.out.println("The coordinate is   " + String.format("%.2f",Math.sqrt(p3))+ ", N"+String.format("%.2f",angleF)+ "ºO");
-                    }else if(x <0 && y<0){
-                    angleF= (90-angle); 
-                    System.out.println("The coordinate is :  " + String.format("%.2f",Math.sqrt(p3))+ ", S"+String.format("%.2f",angleF)+ "ºO");
-                    }else if(x >0 && y<0){
-                    angleF= (90+angle); 
-                    System.out.println("The coordinate is :  " + String.format("%.2f",Math.sqrt(p3))+ ", S"+String.format("%.2f",angleF)+ "ºE");
-                    }
-                    break;    
+            switch (option) {                 
+                    case 1:
+                    int totalOf = 0;
+                    System.out.print(" Enter the number of times you want to perform menu 1 -> ");
+                    totalOf = input.nextInt();
+                    double[] x;
+                    double angleF = 0;
+                    double[] y;
+                    double result;
+                    x = new double[totalOf];
+                    y = new double[totalOf];
+
+                    System.out.println("please enter");
+                    printRectangularToGeographicCoordinates(totalOf, input, x, y, angleF);
+
+                transformRectangularToGeographicCoordinates(totalOf, input, x, y, angleF);
+
+                    break;     
            case 2:
                     double d;
                     System.out.println("Enter Distance:");
@@ -139,7 +118,64 @@ public class GeoSpace {
 
         } while (option != 0);
         }
-        }
+        
  
+ private static int printConversionMenu(Scanner input) {            
+        int option;
+        System.out.print("                   UNIVERSIDAD DE LAS FUERZAS ARMADAS (ESPE)\n\n       ");
+        System.out.print(" CAREER: Engineering in Geospatial Technologies\n ");
+        System.out.print("PROGRAMMING FUNDAMENTALS \n");
+        System.out.println(" NRC:3285");
+        System.out.println(" ========= Coordinate Transformation =======");
+        System.out.println("1.Transformation from Rectangular to Geographic Coordinates ");
+        System.out.println("2.Transformation of Geographic Coordinates to Rectangular ");
+        System.out.println("3.Transformation of Geographic Coordinates to Rectangular to Polar");
+        System.out.println("0.Exit");
+        System.out.println("Enter your menu option --> ");
+        option = input.nextInt();
+        return option;
+    }
 
+    private static int printRectangularToGeographicCoordinates(int totalOf, Scanner input, double[] x, double[] y, double angleF) {
+        for (int j = 0; j < totalOf; j++) {
+
+            System.out.println("Enter rectangular coordinate x: ");
+            x[j] = input.nextInt();
+            System.out.println("Enter rectangular coordinate y: ");
+            y[j] = input.nextInt();
+        }
+        return 0;
+    }        
+
+    private static void transformRectangularToGeographicCoordinates(int totalOf, Scanner input, double[] x, double[] y, double angleF) {
+
+        for (int j = 0; j < totalOf; j++) {
+
+            double p1 = x[j] * x[j];
+            double p2 = y[j] * y[j];
+            double p3 = p1 + p2;
+            double angleC = Math.atan(y[j] / x[j]);
+            double angle = Math.toDegrees(angleC);
+
+            if (x[j] > 0 && y[j] > 0) {
+                angleF = (90 - angle);
+                input.nextLine();
+                System.out.println("La coordenada es:  " + String.format("%.2f", Math.sqrt(p3)) + ", N" + String.format("%.2f", angleF) + "ºE");
+            } else if (x[j] < 0 && y[j] > 0) {
+                angleF = (90 + angle);
+                input.nextLine();
+                System.out.println("La coordenada es:  " + String.format("%.2f", Math.sqrt(p3)) + ", N" + String.format("%.2f", angleF) + "ºO");
+            } else if (x[j] < 0 && y[j] < 0) {
+                angleF = (90 - angle);
+                input.nextLine();
+                System.out.println("The coordinate is :  " + String.format("%.2f", Math.sqrt(p3)) + ", S" + String.format("%.2f", angleF) + "ºO");
+            } else if (x[j] > 0 && y[j] < 0) {
+                angleF = (90 + angle);
+                input.nextLine();
+                System.out.println("The coordinate is :  " + String.format("%.2f", Math.sqrt(p3)) + ", S" + String.format("%.2f", angleF) + "ºE");
+                break;
+            }
+        
+
+    
           
