@@ -25,36 +25,7 @@ public class GeoSpace {
             option = printConversionMenu(input);
 
             switch (option) {
-<<<<<<< HEAD
-                
-                case 1:
-                    double x;
-                    double y;
-                    double r;
-                    double angleF;
-                    System.out.println("Enter rectangular coordinate x: ");
-                    x = input.nextInt();
-                    System.out.println("Enter rectangular coordinate y: ");
-                    y = input.nextInt();
-                    double p1 = x * x;
-                    double p2 = y * y;
-                    double p3 = p1 + p2;
-                    double angleC = Math.atan(y / x);
-                    double angle = Math.toDegrees(angleC);
-                    if (x > 0 && y > 0) {
-                        angleF = (90 - angle);
-                        System.out.println("The coordinate is :  " + String.format("%.2f", Math.sqrt(p3)) + ", N" + String.format("%.2f", angleF) + "ºE");
-                    } else if (x < 0 && y > 0) {
-                        angleF = (90 + angle);
-                        System.out.println("The coordinate is   " + String.format("%.2f", Math.sqrt(p3)) + ", N" + String.format("%.2f", angleF) + "ºO");
-                    } else if (x < 0 && y < 0) {
-                        angleF = (90 - angle);
-                        System.out.println("The coordinate is :  " + String.format("%.2f", Math.sqrt(p3)) + ", S" + String.format("%.2f", angleF) + "ºO");
-                    } else if (x > 0 && y < 0) {
-                        angleF = (90 + angle);
-                        System.out.println("The coordinate is :  " + String.format("%.2f", Math.sqrt(p3)) + ", S" + String.format("%.2f", angleF) + "ºE");
-                    }
-=======
+                 
                 case 1:
                     int totalOf = 0;
                     System.out.print(" Enter the number of times you want to perform menu 1 -> ");
@@ -66,13 +37,13 @@ public class GeoSpace {
                     x = new double[totalOf];
                     y = new double[totalOf];
 
-                    System.out.println("please enter");
                     printRectangularToGeographicCoordinates(totalOf, input, x, y, angleF);
 
                     transformRectangularToGeographicCoordinates(totalOf, input, x, y, angleF);
 
->>>>>>> cbab622dfcc78b36f325414d27dec4eb7042da31
+
                     break;
+            
                 case 2:
                     double distance = showGeographicCoordinatesMenu(input);
                     option = input.nextInt();
@@ -92,11 +63,9 @@ public class GeoSpace {
                             transformGeographicCoordinatesSouthToEast(input, distance);
                             break;
                     }
-<<<<<<< HEAD
                     break;
 
-=======
->>>>>>> cbab622dfcc78b36f325414d27dec4eb7042da31
+
                 case 3:
                     int total = 0;
                     System.out.print(" Enter the number of times you want to perform menu 1 -> ");
@@ -122,13 +91,8 @@ public class GeoSpace {
                         // Transformation from decimals to sexagecimals
                         printDecimalToSexagecimalTransformation(azimut);
                     }
-<<<<<<< HEAD
 
                     break;
-
-=======
-                    break;
->>>>>>> cbab622dfcc78b36f325414d27dec4eb7042da31
                 case 0:
                     System.out.println("Good Bye my friend");
                     System.exit(0);
@@ -198,7 +162,7 @@ public class GeoSpace {
             }
         }
     }
-<<<<<<< HEAD
+
     private static double showGeographicCoordinatesMenu(Scanner input) { 
         double d;
         System.out.println("Enter Distance:");
@@ -210,7 +174,7 @@ public class GeoSpace {
         System.out.println("4. South-East (SE) ");
         return d;
     }   
-=======
+
 
     public static double transformGeographicCoordinatesToPolar(double[] x1, int i, Scanner input, double[] y1, double[] x2, double[] y2) {
         double variationX;
@@ -261,5 +225,4 @@ public class GeoSpace {
         System.out.println("The polar coordinate is: " + degrees + "°" + minutes + "'" + seconds + "'' ");
 
     }
->>>>>>> cbab622dfcc78b36f325414d27dec4eb7042da31
 }
