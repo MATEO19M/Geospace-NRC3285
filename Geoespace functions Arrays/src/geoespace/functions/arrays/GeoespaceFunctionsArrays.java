@@ -26,6 +26,45 @@ public class GeoespaceFunctionsArrays {
             option = printConversionMenu(input);
 
             switch (option) {
+                case 1:
+                    int totalOf = 0;
+                    System.out.print(" Enter the number of times you want to perform menu 1 -> ");
+                    totalOf = input.nextInt();
+                    double[] x;
+                    double angleF = 0;
+                    double[] y;
+                    double result;
+                    x = new double[totalOf];
+                    y = new double[totalOf];
+
+                    System.out.println("please enter");
+                    printRectangularToGeographicCoordinates(totalOf, input, x, y, angleF);
+
+                    transformRectangularToGeographicCoordinates(totalOf, input, x, y, angleF);
+
+                    break;
+
+                case 2:
+                    double distance = showGeographicCoordinatesMenu(input);
+                    option = input.nextInt();
+
+                    switch (option) {
+                        case 1:
+                            transformCoordinateNorthToEast(input, distance);
+                            break;
+                        case 2:
+                            transformGeographicCoordinatesNorthToWest(input, distance);
+                            break;
+
+                        case 3:
+                            transformGeographicCoordinatesSouthToWest(input, distance);
+                            break;
+
+                        case 4:
+                            transformGeographicCoordinatesSouthToEast(input, distance);
+                            break;
+                    }
+                    break;
 
                 case 3:
                     int total = 0;
@@ -81,6 +120,119 @@ public class GeoespaceFunctionsArrays {
         System.out.println("Enter your menu option --> ");
         option = input.nextInt();
         return option;
+    }
+
+    private static int printRectangularToGeographicCoordinates(int totalOf, Scanner input, double[] x, double[] y, double angleF) {
+        for (int j = 0; j < totalOf; j++) {
+
+            System.out.println("Enter rectangular coordinate x: ");
+            x[j] = input.nextInt();
+            System.out.println("Enter rectangular coordinate y: ");
+            y[j] = input.nextInt();
+        }
+        return 0;
+    }
+
+    private static void transformRectangularToGeographicCoordinates(int totalOf, Scanner input, double[] x, double[] y, double angleF) {
+
+        for (int j = 0; j < totalOf; j++) {
+
+            double p1 = x[j] * x[j];
+            double p2 = y[j] * y[j];
+            double p3 = p1 + p2;
+            double angleC = Math.atan(y[j] / x[j]);
+            double angle = Math.toDegrees(angleC);
+
+            if (x[j] > 0 && y[j] > 0) {
+                angleF = (90 - angle);
+                input.nextLine();
+                System.out.println("La coordenada es:  " + String.format("%.2f", Math.sqrt(p3)) + ", N" + String.format("%.2f", angleF) + "ºE");
+            } else if (x[j] < 0 && y[j] > 0) {
+                angleF = (90 + angle);
+                input.nextLine();
+                System.out.println("La coordenada es:  " + String.format("%.2f", Math.sqrt(p3)) + ", N" + String.format("%.2f", angleF) + "ºO");
+            } else if (x[j] < 0 && y[j] < 0) {
+                angleF = (90 - angle);
+                input.nextLine();
+                System.out.println("The coordinate is :  " + String.format("%.2f", Math.sqrt(p3)) + ", S" + String.format("%.2f", angleF) + "ºO");
+            } else if (x[j] > 0 && y[j] < 0) {
+                angleF = (90 + angle);
+                input.nextLine();
+                System.out.println("The coordinate is :  " + String.format("%.2f", Math.sqrt(p3)) + ", S" + String.format("%.2f", angleF) + "ºE");
+                break;
+            }
+        }
+
+    }
+
+    private static double showGeographicCoordinatesMenu(Scanner input) {
+        double d;
+        System.out.println("Enter Distance:");
+        d = input.nextInt();
+        System.out.println(" ======= Choose Orientation =======");
+        System.out.println("1. North-East (NE) ");
+        System.out.println("2. North-West (NO) ");
+        System.out.println("3. South-West (SO) ");
+        System.out.println("4. South-East (SE) ");
+        return d;
+
+    }
+
+    private static void transformCoordinateNorthToEast(Scanner input, double distance) {
+        double x;
+        double y;
+        double angle;
+        System.out.println("Enter Angle:");
+        angle = input.nextInt();
+        double angler = Math.toRadians(angle);
+        double anglerx = Math.sin(angler);
+        double anglery = Math.cos(angler);
+        x = distance * anglerx;
+        y = distance * anglery;
+        System.out.println("The coordinate is:  X=" + String.format("%.2f", x) + ", Y=" + String.format("%.2f", y));
+    }
+
+    private static void transformGeographicCoordinatesNorthToWest(Scanner input, double distance) {
+        double x;
+        double y;
+        double angle;
+        System.out.println("Enter Angle:");
+        angle = input.nextInt();
+        double angler = Math.toRadians(angle);
+        double anglerx = Math.sin(angler);
+        double anglery = Math.cos(angler);
+        x = distance * anglerx;
+        y = distance * anglery;
+        System.out.println("The coordinate is:  X=-" + String.format("%.2f", x) + ", Y=" + String.format("%.2f", y));
+    }
+
+    private static void transformGeographicCoordinatesSouthToWest(Scanner input, double distance) {
+        double x;
+        double y;
+        double angle;
+        System.out.println("Enter Angle:");
+        angle = input.nextInt();
+        double angler = Math.toRadians(angle);
+        double anglerx = Math.sin(angler);
+        double anglery = Math.cos(angler);
+        x = distance * anglerx;
+        y = distance * anglery;
+        System.out.println("The coordinate is:  X=-" + String.format("%.2f", x) + ", Y=-" + String.format("%.2f", y));
+    }
+
+    private static void transformGeographicCoordinatesSouthToEast(Scanner input, double distance) {
+        double x;
+        double y;
+        double angle;
+        System.out.println("Enter the angle:");
+        angle = input.nextInt();
+        double angler = Math.toRadians(angle);
+        double anglerx = Math.sin(angler);
+        double anglety = Math.cos(angler);
+        x = distance * anglerx;
+        y = distance * anglety;
+        System.out.println("The coordinate is:  X=" + String.format("%.2f", x) + ", Y=-" + String.format("%.2f", y));
+
     }
 
     public static double transformGeographicCoordinatesToPolar(double[] x1, int i, Scanner input, double[] y1, double[] x2, double[] y2) {
