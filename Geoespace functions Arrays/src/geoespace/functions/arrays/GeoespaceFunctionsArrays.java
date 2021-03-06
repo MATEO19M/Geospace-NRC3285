@@ -23,8 +23,8 @@ public class GeoespaceFunctionsArrays {
 
         do {
 
-            option = printConversionMenu(input);
-
+            option = printConversionMenu();
+option = input.nextInt();
             switch (option) {
                 case 1:
                     int totalOf = 0;
@@ -106,8 +106,8 @@ public class GeoespaceFunctionsArrays {
         } while (option != 0);
     }
 
-    private static int printConversionMenu(Scanner input) {
-        int option;
+    private static int printConversionMenu() {
+
         System.out.print("                   UNIVERSIDAD DE LAS FUERZAS ARMADAS (ESPE)\n\n       ");
         System.out.print(" CAREER: Engineering in Geospatial Technologies\n ");
         System.out.print("PROGRAMMING FUNDAMENTALS \n");
@@ -118,8 +118,8 @@ public class GeoespaceFunctionsArrays {
         System.out.println("3.Transformation of Geographic Coordinates to Rectangular to Polar");
         System.out.println("0.Exit");
         System.out.println("Enter your menu option --> ");
-        option = input.nextInt();
-        return option;
+        return 0;
+
     }
 
     private static int printRectangularToGeographicCoordinates(int totalOf, Scanner input, double[] x, double[] y, double angleF) {
