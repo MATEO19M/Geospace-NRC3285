@@ -106,8 +106,8 @@ public class GeoespaceFunctionsArrays {
                         y2[i] = input.nextDouble();
 
                         azimut = transformGeographicCoordinatesToPolar(x1, i, y1, x2, y2, distance);
-
-                        printDecimalToSexagecimalTransformation(azimut);
+                        // Transformation from decimals to sexagecimals
+                        printDecimalToSexagecimalTransformation(azimut, distance);
                         break;
                     }
 
@@ -255,9 +255,10 @@ public class GeoespaceFunctionsArrays {
             System.out.println("The azimuth is: " + String.format("%.2f", azimut));
         }
         return azimut;
+
     }
 
-    public static void printDecimalToSexagecimalTransformation(double azimut) {
+    public static void printDecimalToSexagecimalTransformation(double azimut, double distance) {
         int degrees = (int) azimut;
         double fractionalDegrees = azimut - degrees;
         double minutesWithFraction = 60 * fractionalDegrees;
@@ -265,7 +266,7 @@ public class GeoespaceFunctionsArrays {
         double fractionalMinutes = minutesWithFraction - minutes;
         double secondsWithFraction = 60 * fractionalMinutes;
         int seconds = (int) Math.round(secondsWithFraction);
-        System.out.println("The polar coordinate is: " + degrees + "°" + minutes + "'" + seconds + "'' ");
+        System.out.println("The polar coordinate is: " + String.format("%.2f", distance) + ", " + degrees + "°" + minutes + "'" + seconds + "'' ");
     }
 
 }
