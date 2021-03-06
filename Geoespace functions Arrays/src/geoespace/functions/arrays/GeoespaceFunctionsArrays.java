@@ -65,6 +65,25 @@ public class GeoespaceFunctionsArrays {
                             angle = input.nextInt();
                             transformCoordinateNorthToEast(distance, X, Y, angle);
                             break;
+							case 2:
+                            System.out.println("Enter Angle:");
+                            angle = input.nextInt();
+                            transformGeographicCoordinatesNorthToWest(distance, X, Y, angle);
+                            break;
+
+                        case 3:
+                            System.out.println("Enter Angle:");
+                            angle = input.nextInt();
+                            transformGeographicCoordinatesSouthToWest(distance, X, Y, angle);
+                            break;
+
+                        case 4:
+                            System.out.println("Enter the angle:");
+                            angle = input.nextInt();
+                            transformGeographicCoordinatesSouthToEast(distance, X, Y, angle);
+                            break;
+                    }
+                    break;
                     }
             }
         
@@ -142,5 +161,36 @@ public class GeoespaceFunctionsArrays {
         X = distance * anglerx;
         Y = distance * anglery;
         System.out.println("The coordinate is:  X=" + String.format("%.2f", X) + ", Y=" + String.format("%.2f", Y));
+    } 
+	private static void transformGeographicCoordinatesNorthToWest(double distance, double X, double Y, double angle) {
+
+        double angler = Math.toRadians(angle);
+        double anglerx = Math.sin(angler);
+        double anglery = Math.cos(angler);
+        X = distance * anglerx;
+        Y = distance * anglery;
+        System.out.println("The coordinate is:  X=-" + String.format("%.2f", X) + ", Y=" + String.format("%.2f", Y));
     }
+
+    private static void transformGeographicCoordinatesSouthToWest(double distance, double X, double Y, double angle) {
+
+        double angler = Math.toRadians(angle);
+        double anglerx = Math.sin(angler);
+        double anglery = Math.cos(angler);
+        X = distance * anglerx;
+        Y = distance * anglery;
+        System.out.println("The coordinate is:  X=-" + String.format("%.2f", X) + ", Y=-" + String.format("%.2f", Y));
+    }
+
+    private static void transformGeographicCoordinatesSouthToEast(double distance, double X, double Y, double angle) {
+
+        double angler = Math.toRadians(angle);
+        double anglerx = Math.sin(angler);
+        double anglety = Math.cos(angler);
+        X = distance * anglerx;
+        Y = distance * anglety;
+        System.out.println("The coordinate is:  X=" + String.format("%.2f", X) + ", Y=-" + String.format("%.2f", Y));
+
+    }
+
 }
