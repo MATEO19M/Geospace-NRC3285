@@ -24,23 +24,19 @@ public class GeoespaceFunctionsArrays {
         do {
 
             option = printConversionMenu();
-option = input.nextInt();
+            option = input.nextInt();
             switch (option) {
                 case 1:
                     int totalOf = 0;
-                    System.out.print(" Enter the number of times you want to perform menu 1 -> ");
+                    
                     totalOf = input.nextInt();
-                    double[] x;
+                    double[] x= new double[totalOf];
                     double angleF = 0;
-                    double[] y;
-                    double result;
-                    x = new double[totalOf];
-                    y = new double[totalOf];
+                    double[] y= new double[totalOf];
+                   
+                    printRectangularToGeographicCoordinates(totalOf, input, x, y);
 
-                    System.out.println("please enter");
-                    printRectangularToGeographicCoordinates(totalOf, input, x, y, angleF);
-
-                    transformRectangularToGeographicCoordinates(totalOf, input, x, y, angleF);
+                    transformRectangularToGeographicCoordinates(totalOf,x, y, angleF);
 
                     break;
 
@@ -122,7 +118,7 @@ option = input.nextInt();
 
     }
 
-    private static int printRectangularToGeographicCoordinates(int totalOf, Scanner input, double[] x, double[] y, double angleF) {
+    private static int printRectangularToGeographicCoordinates(int totalOf, Scanner input, double[] x, double[] y) {
         for (int j = 0; j < totalOf; j++) {
 
             System.out.println("Enter rectangular coordinate x: ");
@@ -133,7 +129,7 @@ option = input.nextInt();
         return 0;
     }
 
-    private static void transformRectangularToGeographicCoordinates(int totalOf, Scanner input, double[] x, double[] y, double angleF) {
+    private static void transformRectangularToGeographicCoordinates(int totalOf, double[] x, double[] y, double angleF) {
 
         for (int j = 0; j < totalOf; j++) {
 
@@ -142,22 +138,23 @@ option = input.nextInt();
             double p3 = p1 + p2;
             double angleC = Math.atan(y[j] / x[j]);
             double angle = Math.toDegrees(angleC);
-
+System.out.println("Please press enter as many times as necessary to display the results");
             if (x[j] > 0 && y[j] > 0) {
                 angleF = (90 - angle);
-                input.nextLine();
+               
                 System.out.println("La coordenada es:  " + String.format("%.2f", Math.sqrt(p3)) + ", N" + String.format("%.2f", angleF) + "ºE");
             } else if (x[j] < 0 && y[j] > 0) {
                 angleF = (90 + angle);
-                input.nextLine();
+            
                 System.out.println("La coordenada es:  " + String.format("%.2f", Math.sqrt(p3)) + ", N" + String.format("%.2f", angleF) + "ºO");
             } else if (x[j] < 0 && y[j] < 0) {
                 angleF = (90 - angle);
-                input.nextLine();
+                
                 System.out.println("The coordinate is :  " + String.format("%.2f", Math.sqrt(p3)) + ", S" + String.format("%.2f", angleF) + "ºO");
             } else if (x[j] > 0 && y[j] < 0) {
                 angleF = (90 + angle);
-                input.nextLine();
+                
+                
                 System.out.println("The coordinate is :  " + String.format("%.2f", Math.sqrt(p3)) + ", S" + String.format("%.2f", angleF) + "ºE");
                 break;
             }
