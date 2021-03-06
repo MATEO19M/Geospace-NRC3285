@@ -107,8 +107,8 @@ public class GeoespaceFunctionsArrays {
 
                         azimut = transformGeographicCoordinatesToPolar(x1, i, y1, x2, y2, distance);
 
-                        // Transformation from decimals to sexagecimals
                         printDecimalToSexagecimalTransformation(azimut);
+                        break;
                     }
 
                     break;
@@ -191,41 +191,41 @@ public class GeoespaceFunctionsArrays {
 
     private static void transformCoordinateNorthToEast(double distance, double X, double Y, double angle) {
 
-        double angler = Math.toRadians(angle);
-        double anglerx = Math.sin(angler);
-        double anglery = Math.cos(angler);
-        X = distance * anglerx;
-        Y = distance * anglery;
+        double radianAngle = Math.toRadians(angle);
+        double radianAngleX = Math.sin(radianAngle);
+        double radianAngleY = Math.cos(radianAngle);
+        X = distance * radianAngleX;
+        Y = distance * radianAngleY;
         System.out.println("The coordinate is:  X=" + String.format("%.2f", X) + ", Y=" + String.format("%.2f", Y));
     }
 
     private static void transformGeographicCoordinatesNorthToWest(double distance, double X, double Y, double angle) {
 
-        double angler = Math.toRadians(angle);
-        double anglerx = Math.sin(angler);
-        double anglery = Math.cos(angler);
-        X = distance * anglerx;
-        Y = distance * anglery;
+        double radianAngle = Math.toRadians(angle);
+        double radianAngleX = Math.sin(radianAngle);
+        double radianAngleY = Math.cos(radianAngle);
+        X = distance * radianAngleX;
+        Y = distance * radianAngleY;
         System.out.println("The coordinate is:  X=-" + String.format("%.2f", X) + ", Y=" + String.format("%.2f", Y));
     }
 
     private static void transformGeographicCoordinatesSouthToWest(double distance, double X, double Y, double angle) {
 
-        double angler = Math.toRadians(angle);
-        double anglerx = Math.sin(angler);
-        double anglery = Math.cos(angler);
-        X = distance * anglerx;
-        Y = distance * anglery;
+        double radianAngle = Math.toRadians(angle);
+        double radianAngleX = Math.sin(radianAngle);
+        double radianAngleY = Math.cos(radianAngle);
+        X = distance * radianAngleX;
+        Y = distance * radianAngleY;
         System.out.println("The coordinate is:  X=-" + String.format("%.2f", X) + ", Y=-" + String.format("%.2f", Y));
     }
 
     private static void transformGeographicCoordinatesSouthToEast(double distance, double X, double Y, double angle) {
 
-        double angler = Math.toRadians(angle);
-        double anglerx = Math.sin(angler);
-        double anglety = Math.cos(angler);
-        X = distance * anglerx;
-        Y = distance * anglety;
+        double radianAngle = Math.toRadians(angle);
+        double radianAngleX = Math.sin(radianAngle);
+        double radianAngleY = Math.cos(radianAngle);
+        X = distance * radianAngleX;
+        Y = distance * radianAngleY;
         System.out.println("The coordinate is:  X=" + String.format("%.2f", X) + ", Y=-" + String.format("%.2f", Y));
 
     }
@@ -255,7 +255,6 @@ public class GeoespaceFunctionsArrays {
             System.out.println("The azimuth is: " + String.format("%.2f", azimut));
         }
         return azimut;
-
     }
 
     public static void printDecimalToSexagecimalTransformation(double azimut) {
@@ -268,4 +267,5 @@ public class GeoespaceFunctionsArrays {
         int seconds = (int) Math.round(secondsWithFraction);
         System.out.println("The polar coordinate is: " + degrees + "°" + minutes + "'" + seconds + "'' ");
     }
+
 }
