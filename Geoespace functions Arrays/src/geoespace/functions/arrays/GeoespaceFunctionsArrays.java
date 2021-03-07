@@ -21,7 +21,7 @@ public class GeoespaceFunctionsArrays {
         boolean mainLoop = true;
         int option;
         double[] x;
-        double angleF = 0;
+        double endAngle = 0;
         double[] y;
         double distance = 0;
         double[] x1;
@@ -39,15 +39,15 @@ public class GeoespaceFunctionsArrays {
 
             switch (option) {
                 case 1:
-                    int totalOf = 0;
+                    int totalOfRepetitionTimes = 0;
                     System.out.print(" Enter the number of times you want to perform menu 1 -> ");
-                    totalOf = input.nextInt();
-                    x = new double[totalOf];
-                    y = new double[totalOf];
+                    totalOfRepetitionTimes = input.nextInt();
+                    x = new double[totalOfRepetitionTimes];
+                    y = new double[totalOfRepetitionTimes];
 
-                    printRectangularToGeographicCoordinates(totalOf, input, x, y);
+                    printRectangularToGeographicCoordinates(totalOfRepetitionTimes, input, x, y);
 
-                    transformRectangularToGeographicCoordinates(totalOf, x, y, angleF);
+                    transformRectangularToGeographicCoordinates(totalOfRepetitionTimes, x, y, endAngle);
 
                     break;
 
@@ -85,15 +85,15 @@ public class GeoespaceFunctionsArrays {
                     }
                     break;
                 case 3:
-                    int total = 0;
+                    int totalRepetitions = 0;
                     System.out.print(" Enter the number of times you want to perform menu 1 -> ");
-                    total = input.nextInt();
-                    for (int i = 0; i < total; i++) {
-                        x1 = new double[total];
-                        x1 = new double[total];
-                        y1 = new double[total];
-                        x2 = new double[total];
-                        y2 = new double[total];
+                    totalRepetitions = input.nextInt();
+                    for (int i = 0; i < totalRepetitions; i++) {
+                        x1 = new double[totalRepetitions];
+                        x1 = new double[totalRepetitions];
+                        y1 = new double[totalRepetitions];
+                        x2 = new double[totalRepetitions];
+                        y2 = new double[totalRepetitions];
                         System.out.println("--Coordinate A--");
                         System.out.print("Enter rectangular coordinate x: ");
                         x1[i] = input.nextDouble();
