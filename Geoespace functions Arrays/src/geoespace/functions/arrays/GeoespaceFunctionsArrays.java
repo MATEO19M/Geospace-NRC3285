@@ -142,8 +142,8 @@ public class GeoespaceFunctionsArrays {
 
     }
 
-    private static int printRectangularToGeographicCoordinates(int totalOf, Scanner input, double[] x, double[] y) {
-        for (int j = 0; j < totalOf; j++) {
+    private static int printRectangularToGeographicCoordinates(int totalOftotalOfRepetitionTime, Scanner input, double[] x, double[] y) {
+        for (int j = 0; j < totalOftotalOfRepetitionTime; j++) {
 
             System.out.println("Enter rectangular coordinate x: ");
             x[j] = input.nextInt();
@@ -153,28 +153,28 @@ public class GeoespaceFunctionsArrays {
         return 0;
     }
 
-    private static void transformRectangularToGeographicCoordinates(int totalOf, double[] x, double[] y, double angleF) {
+    private static void transformRectangularToGeographicCoordinates(int totalOf, double[] x, double[] y, double endAngle) {
 
         for (int j = 0; j < totalOf; j++) {
 
             double p1 = x[j] * x[j];
             double p2 = y[j] * y[j];
             double p3 = p1 + p2;
-            double angleC = Math.atan(y[j] / x[j]);
-            double angle = Math.toDegrees(angleC);
+            double anglInDegrees = Math.atan(y[j] / x[j]);
+            double angle = Math.toDegrees(anglInDegrees);
 
             if (x[j] > 0 && y[j] > 0) {
-                angleF = (90 - angle);
-                System.out.println("The coordinate is:  " + String.format("%.2f", Math.sqrt(p3)) + ", N" + String.format("%.2f", angleF) + "ºE");
+                endAngle = (90 - angle);
+                System.out.println("The coordinate is:  " + String.format("%.2f", Math.sqrt(p3)) + ", N" + String.format("%.2f", endAngle) + "ºE");
             } else if (x[j] < 0 && y[j] > 0) {
-                angleF = (90 + angle);
-                System.out.println("The coordinate is:  " + String.format("%.2f", Math.sqrt(p3)) + ", N" + String.format("%.2f", angleF) + "ºO");
+                endAngle = (90 + angle);
+                System.out.println("The coordinate is:  " + String.format("%.2f", Math.sqrt(p3)) + ", N" + String.format("%.2f", endAngle) + "ºO");
             } else if (x[j] < 0 && y[j] < 0) {
-                angleF = (90 - angle);
-                System.out.println("The coordinate is :  " + String.format("%.2f", Math.sqrt(p3)) + ", S" + String.format("%.2f", angleF) + "ºO");
+                endAngle = (90 - angle);
+                System.out.println("The coordinate is :  " + String.format("%.2f", Math.sqrt(p3)) + ", S" + String.format("%.2f", endAngle) + "ºO");
             } else if (x[j] > 0 && y[j] < 0) {
-                angleF = (90 + angle);
-                System.out.println("The coordinate is :  " + String.format("%.2f", Math.sqrt(p3)) + ", S" + String.format("%.2f", angleF) + "ºE");
+                endAngle = (90 + angle);
+                System.out.println("The coordinate is :  " + String.format("%.2f", Math.sqrt(p3)) + ", S" + String.format("%.2f", endAngle) + "ºE");
                 break;
             }
         }
