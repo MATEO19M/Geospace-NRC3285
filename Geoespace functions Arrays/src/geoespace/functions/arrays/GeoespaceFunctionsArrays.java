@@ -52,10 +52,10 @@ public class GeoespaceFunctionsArrays {
                     break;
 
                 case 2:
-                    System.out.print("Enter Distance:");
+                    System.out.print("Enter Distance: ");
                     distance = input.nextInt();
                     showGeographicCoordinatesMenu();
-                    System.out.print("Enter the option");
+                    System.out.print("Enter the option: ");
                     option = input.nextInt();
 
                     switch (option) {
@@ -137,7 +137,7 @@ public class GeoespaceFunctionsArrays {
         System.out.println("2.Transformation of Geographic Coordinates to Rectangular ");
         System.out.println("3.Transformation of Geographic Coordinates to Rectangular to Polar");
         System.out.println("0.Exit");
-        System.out.println("Enter your menu option --> ");
+        System.out.print("Enter your menu option --> ");
         return 0;
 
     }
@@ -145,17 +145,17 @@ public class GeoespaceFunctionsArrays {
     private static int printRectangularToGeographicCoordinates(int totalOftotalOfRepetitionTime, Scanner input, double[] x, double[] y) {
         for (int j = 0; j < totalOftotalOfRepetitionTime; j++) {
 
-            System.out.println("Enter rectangular coordinate x: ");
+            System.out.print("Enter rectangular coordinate x: ");
             x[j] = input.nextInt();
-            System.out.println("Enter rectangular coordinate y: ");
+            System.out.print("Enter rectangular coordinate y: ");
             y[j] = input.nextInt();
         }
         return 0;
     }
 
-    private static void transformRectangularToGeographicCoordinates(int totalOf, double[] x, double[] y, double endAngle) {
+    private static void transformRectangularToGeographicCoordinates(int totalOfRepetitionTime, double[] x, double[] y, double endAngle) {
 
-        for (int j = 0; j < totalOf; j++) {
+        for (int j = 0; j < totalOfRepetitionTime; j++) {
 
             double p1 = x[j] * x[j];
             double p2 = y[j] * y[j];
