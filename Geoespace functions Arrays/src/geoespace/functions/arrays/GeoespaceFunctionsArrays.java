@@ -52,33 +52,33 @@ public class GeoespaceFunctionsArrays {
                     break;
 
                 case 2:
-                    System.out.println("Enter Distance:");
+                    System.out.print("Enter Distance:");
                     distance = input.nextInt();
                     showGeographicCoordinatesMenu();
-                    System.out.println("Enter the option");
+                    System.out.print("Enter the option");
                     option = input.nextInt();
 
                     switch (option) {
                         case 1:
 
-                            System.out.println("Enter Angle:");
+                            System.out.print("Enter Angle:");
                             angle = input.nextInt();
                             transformCoordinateNorthToEast(distance, X, Y, angle);
                             break;
                         case 2:
-                            System.out.println("Enter Angle:");
+                            System.out.print("Enter Angle:");
                             angle = input.nextInt();
                             transformGeographicCoordinatesNorthToWest(distance, X, Y, angle);
                             break;
 
                         case 3:
-                            System.out.println("Enter Angle:");
+                            System.out.print("Enter Angle:");
                             angle = input.nextInt();
                             transformGeographicCoordinatesSouthToWest(distance, X, Y, angle);
                             break;
 
                         case 4:
-                            System.out.println("Enter the angle:");
+                            System.out.print("Enter the angle:");
                             angle = input.nextInt();
                             transformGeographicCoordinatesSouthToEast(distance, X, Y, angle);
                             break;
