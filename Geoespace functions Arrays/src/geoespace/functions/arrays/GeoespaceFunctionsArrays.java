@@ -54,7 +54,7 @@ public class GeoespaceFunctionsArrays {
                 case 2:
                     System.out.print("Enter Distance: ");
                     distance = input.nextInt();
-                    showGeographicCoordinatesMenu();
+                    readTheGeographicCoordinatesMenu();
                     System.out.print("Enter the option: ");
                     option = input.nextInt();
 
@@ -89,7 +89,6 @@ public class GeoespaceFunctionsArrays {
                     System.out.print(" Enter the number of times you want to perform menu 1 -> ");
                     totalRepetitions = input.nextInt();
                     for (int i = 0; i < totalRepetitions; i++) {
-                        x1 = new double[totalRepetitions];
                         x1 = new double[totalRepetitions];
                         y1 = new double[totalRepetitions];
                         x2 = new double[totalRepetitions];
@@ -160,8 +159,8 @@ public class GeoespaceFunctionsArrays {
             double p1 = x[j] * x[j];
             double p2 = y[j] * y[j];
             double p3 = p1 + p2;
-            double anglInDegrees = Math.atan(y[j] / x[j]);
-            double angle = Math.toDegrees(anglInDegrees);
+            double angleInDegrees = Math.atan(y[j] / x[j]);
+            double angle = Math.toDegrees(angleInDegrees);
 
             if (x[j] > 0 && y[j] > 0) {
                 endAngle = (90 - angle);
@@ -180,7 +179,7 @@ public class GeoespaceFunctionsArrays {
         }
     }
 
-    private static void showGeographicCoordinatesMenu() {
+    private static void readTheGeographicCoordinatesMenu() {
 
         System.out.println(" ======= Choose Orientation =======");
         System.out.println("1. North-East (NE) ");
