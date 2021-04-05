@@ -488,7 +488,39 @@ public class FrmGeoSpace extends javax.swing.JFrame {
         transformationToSexagesimals = degrees + "°" + minutes + "'" + seconds + "'' ";
         txtCoordinatePolar.setText(transformationToSexagesimals);
 
-    }//GEN-LAST:event_btnCoordinatePolarActionPerformed
+    }private void cmbResult2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbResult2ActionPerformed
+
+        double distance;
+        double angle;
+        boolean orientation;
+        double result2;
+        double X = 0;
+        double Y = 0;
+        String transformation = null;
+        
+        distance = Double.parseDouble(txtDistance.getText());
+        orientation = Boolean.parseBoolean(cmbOrientation.getSelectedItem().toString());
+        angle = Double.parseDouble(txtAngle.getText());
+        GeoSpaceController geoSpaceController = new GeoSpaceController();
+        double angler = Math.toRadians(angle);
+        double anglerx = Math.sin(angler);
+        double anglery = Math.cos(angler);
+        X = distance * anglerx;
+        Y = distance * anglery;
+        
+        
+        if (cmbOrientation.getSelectedItem().equals("North-East (NE)")) {
+            transformation = ("The coordinate is:  X=" + String.format("%.2f", X) + ", Y=" + String.format("%.2f", Y));
+        } else if(cmbOrientation.getSelectedItem().equals("North-West (NO)")) {
+            transformation = ("The coordinate is:  X=-" + String.format("%.2f", X) + ", Y=" + String.format("%.2f", Y));            
+        } else if(cmbOrientation.getSelectedItem().equals("South-West (SO)")) {
+            transformation = ("The coordinate is:  X=-" + String.format("%.2f", X) + ", Y=-" + String.format("%.2f", Y));           
+        } else if(cmbOrientation.getSelectedItem().equals("South-East (SE)")) {
+            transformation = ("The coordinate is:  X=" + String.format("%.2f", X) + ", Y=-" + String.format("%.2f", Y));
+        }
+        txtResult2.setText(transformation);
+    }
+	//GEN-LAST:event_btnCoordinatePolarActionPerformed
 
     /**
      * @param args the command line arguments
