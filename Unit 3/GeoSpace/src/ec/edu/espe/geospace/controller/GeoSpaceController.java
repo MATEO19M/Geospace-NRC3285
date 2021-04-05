@@ -23,7 +23,7 @@ import utils.FileManager;
  */
 public class GeoSpaceController {
 
-    public double transformGeographicCoordinatesToPolar(double x1, double y1, double x2, double y2) { //Caty
+    public double transformGeographicCoordinatesToPolar(double x1, double y1, double x2, double y2) { 
         double distance;
         double variationX;
         double variationY;
@@ -35,25 +35,21 @@ public class GeoSpaceController {
         azimut = Math.atan(variationX / variationY);
         azimut = azimut + 360;
         if (variationX > 0 & variationY >= 0) {
-            System.out.println("" + String.format("%.2f", azimut));
         }
         if (variationX > 0 & variationY <= 0) {
-            System.out.println("" + String.format("%.2f", azimut));
         }
         if (variationX < 0 & variationY > 0) {
             azimut = azimut - 180;
-            System.out.println("" + String.format("%.2f", azimut));
         }
         if (variationX < 0 & variationY < 0) {
             azimut = azimut + 180;
-            System.out.println("" + String.format("%.2f", azimut));
         }
         return azimut;
 
     }
 
     public void saveRectangularToPolarCoordinates(GeoSpace geoSpace) {
-        String Data = geoSpace.getCoordinateName() + "," + geoSpace.getCoordinateX1() + "," + geoSpace.getCoordinateY1() + "," + geoSpace.getCoordinateX2() + "," + geoSpace.getCoordinateY2() + "," + geoSpace.getAzimutResult() + "," + geoSpace.getCoordinatePolar();
+        String Data = geoSpace.getCoordinateName() + "," + geoSpace.getCoordinateX1() + "," + geoSpace.getCoordinateY1() + "," + geoSpace.getCoordinateX2() + "," + geoSpace.getCoordinateY2() + "," + geoSpace.getAzimutResult();
         FileManager.save(Data, "Rectangular to Polar Coordinates");
     }
 
@@ -64,7 +60,6 @@ public class GeoSpaceController {
         polar.addElement("Coordinate Y1");
         polar.addElement("Coordinate X2");
         polar.addElement("Coordinate Y2");
-        polar.addElement("Azimut");
         polar.addElement("Coordinate Polar");
 
         DefaultTableModel table = new DefaultTableModel(polar, 0);
@@ -88,13 +83,13 @@ public class GeoSpaceController {
     }
 
     public void findRectangularToPolarCoordinates(String name) {
-        String projectsName = name;
+        String coordinateName = name;
         try {
             BufferedReader read = new BufferedReader(new FileReader("Rectangular to Polar Coordinates.csv"));
             String line = "";
             while ((line = read.readLine()) != null) {
 
-                if (line.indexOf(projectsName) != -1) {
+                if (line.indexOf(coordinateName) != -1) {
                     System.out.println("se encontro el registro" + line);
                 }
             }
@@ -103,4 +98,7 @@ public class GeoSpaceController {
             System.out.println(ex.getMessage());
         }
     }
+
+
+
 }

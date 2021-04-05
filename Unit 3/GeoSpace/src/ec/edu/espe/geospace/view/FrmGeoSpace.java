@@ -42,6 +42,44 @@ public class FrmGeoSpace extends javax.swing.JFrame {
         jTable3 = new javax.swing.JTable();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
+        txtDistance1 = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        txtCoordinateX2 = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        txtCoordinateY3 = new javax.swing.JTextField();
+        cmbResult3 = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
+        btnASave1 = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        txtCoordinatex3 = new javax.swing.JTextField();
+        txtResult1 = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        txtResult3 = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        txtCoordinateY4 = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tblCoordinatesPolar1 = new javax.swing.JTable();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        btnShowPolar1 = new javax.swing.JButton();
+        jLabel30 = new javax.swing.JLabel();
+        btnFindCoordinate1 = new javax.swing.JButton();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        txtRectangularCoordinateX1 = new javax.swing.JTextField();
+        txtCoordinateName1 = new javax.swing.JTextField();
+        txtRectangularCoordinateY1 = new javax.swing.JTextField();
+        btnCoordinatePolar1 = new javax.swing.JButton();
+        jLabel33 = new javax.swing.JLabel();
+        txtCoordinatePolar1 = new javax.swing.JTextField();
+        txtAngle1 = new javax.swing.JTextField();
+        cmbOptions1 = new javax.swing.JComboBox<>();
+        jLabel34 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         cmbResult2 = new javax.swing.JButton();
@@ -107,6 +145,96 @@ public class FrmGeoSpace extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(jTable4);
 
+        jLabel18.setText("Rectangular coordinate x:");
+
+        jLabel19.setText("Rectangular coordinate y:");
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel20.setText("Coordinate B");
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel21.setText("Coordinate A");
+
+        cmbResult3.setText("Result ");
+
+        jLabel22.setText("Rectangular coordinate x:");
+
+        btnASave1.setText("Save");
+        btnASave1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnASave1ActionPerformed(evt);
+            }
+        });
+
+        jLabel23.setText("Rectangular coordinate y:");
+
+        jButton4.setText("Result ");
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel24.setText("                    UNIVERSIDAD DE LAS FUERZAS ARMADAS (ESPE)    ");
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel25.setText("Engineering in Geospatial Technologies ");
+
+        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel26.setText("1. Rectangular to Geographic Coordinates");
+
+        jLabel27.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        jLabel27.setText("TRANSFORMATION OF COORDINATES");
+
+        tblCoordinatesPolar1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Coordinate name", "Coordinate X1", "Coordinate Y1", "Coordinate X2", "Coordinate Y2", "Coordinate "
+            }
+        ));
+        jScrollPane6.setViewportView(tblCoordinatesPolar1);
+        if (tblCoordinatesPolar1.getColumnModel().getColumnCount() > 0) {
+            tblCoordinatesPolar1.getColumnModel().getColumn(0).setResizable(false);
+            tblCoordinatesPolar1.getColumnModel().getColumn(1).setResizable(false);
+        }
+
+        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel28.setText("2.Geographic Coordinates to Rectangular");
+
+        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel29.setText("3. Rectangular to Polar coordinates");
+
+        btnShowPolar1.setText("Show ");
+        btnShowPolar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnShowPolar1ActionPerformed(evt);
+            }
+        });
+
+        jLabel30.setText("Rectangular coordinate x:");
+
+        btnFindCoordinate1.setText("Find a coordinate");
+        btnFindCoordinate1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFindCoordinate1ActionPerformed(evt);
+            }
+        });
+
+        jLabel31.setText("Rectangular coordinate y:");
+
+        jLabel32.setText("Coordinate name");
+
+        btnCoordinatePolar1.setText("Coordinate Polar");
+        btnCoordinatePolar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCoordinatePolar1ActionPerformed(evt);
+            }
+        });
+
+        jLabel33.setText("Distance");
+
+        cmbOptions1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1. North-East (NE) ", "2. North-West (NO) ", "3. South-West (SO) ", "4. South-East (SE)" }));
+
+        jLabel34.setText("Angle");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
@@ -167,7 +295,7 @@ public class FrmGeoSpace extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Coordinate name", "Coordinate X1", "Coordinate Y1", "Coordinate X2", "Coordinate Y2", "Result"
+                "Coordinate name", "Coordinate X1", "Coordinate Y1", "Coordinate X2", "Coordinate Y2", "Coordinate "
             }
         ));
         jScrollPane5.setViewportView(tblCoordinatesPolar);
@@ -203,21 +331,30 @@ public class FrmGeoSpace extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 622, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(147, 147, 147))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel16)
-                                .addGap(282, 282, 282))))
+                        .addComponent(btnShowPolar)
+                        .addGap(108, 108, 108)
+                        .addComponent(btnFindCoordinate)
+                        .addGap(246, 246, 246))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 708, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(605, 605, 605)
+                        .addComponent(jLabel16))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(430, 430, 430)
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 622, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -229,7 +366,16 @@ public class FrmGeoSpace extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton3)
                                 .addGap(30, 30, 30)
-                                .addComponent(txtResult, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtResult, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 198, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel17)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(11, 11, 11)
@@ -247,80 +393,109 @@ public class FrmGeoSpace extends javax.swing.JFrame {
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                             .addComponent(jLabel8)
                                             .addGap(58, 58, 58)
-                                            .addComponent(txtAngle, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addComponent(txtAngle, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                        .addGap(315, 315, 315)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel11)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtCoordinatex2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel13)
-                                            .addComponent(jLabel10))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtCoordinateY1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel11)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(txtCoordinatex2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(jLabel13)
+                                                .addComponent(jLabel10))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(txtCoordinateY1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                 .addComponent(jLabel14)
                                                 .addComponent(jLabel9))
-                                            .addComponent(jLabel1))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtCoordinateX1)
-                                            .addComponent(txtCoordinateName, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnCoordinatePolar)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtCoordinatePolar))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(btnASave)
-                                            .addComponent(jLabel12))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtCoordinateY2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel17)
-                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnShowPolar)
-                                        .addGap(58, 58, 58)
-                                        .addComponent(btnFindCoordinate)
-                                        .addGap(301, 301, 301))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 708, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(55, 55, 55))))))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(txtCoordinateX1)
+                                                .addComponent(txtCoordinateName, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(btnCoordinatePolar)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(txtCoordinatePolar))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(btnASave)
+                                                .addComponent(jLabel12))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(txtCoordinateY2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jLabel1))))))
+                .addGap(283, 283, 283))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(6, 6, 6)
+                .addGap(7, 7, 7)
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel16)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel17)
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(560, 560, 560)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel1)
+                                    .addComponent(txtCoordinateName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(27, 27, 27)
+                                .addComponent(jLabel14)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel9)
+                                    .addComponent(txtCoordinateX1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel10)
+                                    .addComponent(txtCoordinateY1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel11)
+                                    .addComponent(txtCoordinatex2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(38, 38, 38)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel7)
+                                    .addComponent(txtDistance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(cmbOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(16, 16, 16)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel8)
+                                    .addComponent(txtAngle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(28, 28, 28)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(cmbResult2)
+                                    .addComponent(txtResult2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(11, 11, 11)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnShowPolar)
-                            .addComponent(btnFindCoordinate))
-                        .addGap(98, 98, 98))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabel12)
+                            .addComponent(txtCoordinateY2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29)
+                        .addComponent(btnASave)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnCoordinatePolar)
+                            .addComponent(txtCoordinatePolar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addGap(38, 38, 38)
+                        .addGap(53, 53, 53)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(txtRectangularCoordinateX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -331,56 +506,14 @@ public class FrmGeoSpace extends javax.swing.JFrame {
                         .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton3)
-                            .addComponent(txtResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel3)
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(txtDistance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(cmbOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(txtAngle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cmbResult2)
-                            .addComponent(txtResult2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(txtCoordinateName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel14)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(txtCoordinateX1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(txtCoordinateY1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(txtCoordinatex2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(11, 11, 11)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(txtCoordinateY2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29)
-                        .addComponent(btnASave)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnCoordinatePolar)
-                            .addComponent(txtCoordinatePolar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(15, 15, 15))))
+                            .addComponent(txtResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnShowPolar)
+                    .addComponent(btnFindCoordinate))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         pack();
@@ -398,14 +531,12 @@ public class FrmGeoSpace extends javax.swing.JFrame {
         String transformation = "";
         Vector polar = new Vector();
         integers = new double[4];
-        
 
         coordinateName = txtCoordinateName.getText();
         integers[0] = Integer.parseInt(txtCoordinateX1.getText());
         integers[1] = Integer.parseInt(txtCoordinateY1.getText());
         integers[2] = Integer.parseInt(txtCoordinatex2.getText());
         integers[3] = Integer.parseInt(txtCoordinateY2.getText());
-        
 
         GeoSpaceController geoSpaceController = new GeoSpaceController();
 
@@ -429,7 +560,6 @@ public class FrmGeoSpace extends javax.swing.JFrame {
             azimut = azimut + 180;
             transformation = "" + String.format("%.2f", azimutResult);
         }
-      //  txtAzimutResult.setText(transformation);
 
         geoSpace = new GeoSpace(coordinateName, integers[0], integers[1], integers[2], integers[3], azimutResult, coordinatePolar);
         geoSpaceController.saveRectangularToPolarCoordinates(geoSpace);
@@ -439,7 +569,6 @@ public class FrmGeoSpace extends javax.swing.JFrame {
         polar.addElement("Coordinate Y1");
         polar.addElement("Coordinate X2");
         polar.addElement("Coordinate Y2");
-        polar.addElement("Azimut");
         polar.addElement("Coordinate Polar");
 
 
@@ -455,7 +584,8 @@ public class FrmGeoSpace extends javax.swing.JFrame {
     }//GEN-LAST:event_btnShowPolarActionPerformed
 
     private void btnFindCoordinateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindCoordinateActionPerformed
-
+   String coordinateName;
+   String sql="SELECT * FROM  ";
 
     }//GEN-LAST:event_btnFindCoordinateActionPerformed
 
@@ -463,19 +593,15 @@ public class FrmGeoSpace extends javax.swing.JFrame {
         GeoSpace geoSpace;
         double[] integers;
         double azimutResult;
-        int coordinatePolar = 0;
-        String transformation = "";
         integers = new double[4];
-
-
+        String transformationToSexagesimals;
+        
         integers[0] = Integer.parseInt(txtCoordinateX1.getText());
         integers[1] = Integer.parseInt(txtCoordinateY1.getText());
         integers[2] = Integer.parseInt(txtCoordinatex2.getText());
         integers[3] = Integer.parseInt(txtCoordinateY2.getText());
 
         GeoSpaceController geoSpaceController = new GeoSpaceController();
-
-        String transformationToSexagesimals;
 
         azimutResult = geoSpaceController.transformGeographicCoordinatesToPolar(integers[0], integers[1], integers[2], integers[3]);
         int degrees = (int) azimutResult;
@@ -489,6 +615,22 @@ public class FrmGeoSpace extends javax.swing.JFrame {
         txtCoordinatePolar.setText(transformationToSexagesimals);
 
     }//GEN-LAST:event_btnCoordinatePolarActionPerformed
+
+    private void btnASave1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnASave1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnASave1ActionPerformed
+
+    private void btnShowPolar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowPolar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnShowPolar1ActionPerformed
+
+    private void btnFindCoordinate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindCoordinate1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFindCoordinate1ActionPerformed
+
+    private void btnCoordinatePolar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCoordinatePolar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCoordinatePolar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -527,12 +669,19 @@ public class FrmGeoSpace extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnASave;
+    private javax.swing.JButton btnASave1;
     private javax.swing.JButton btnCoordinatePolar;
+    private javax.swing.JButton btnCoordinatePolar1;
     private javax.swing.JButton btnFindCoordinate;
+    private javax.swing.JButton btnFindCoordinate1;
     private javax.swing.JButton btnShowPolar;
+    private javax.swing.JButton btnShowPolar1;
     private javax.swing.JComboBox<String> cmbOptions;
+    private javax.swing.JComboBox<String> cmbOptions1;
     private javax.swing.JButton cmbResult2;
+    private javax.swing.JButton cmbResult3;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -542,8 +691,25 @@ public class FrmGeoSpace extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -553,20 +719,34 @@ public class FrmGeoSpace extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable tblCoordinatesPolar;
+    private javax.swing.JTable tblCoordinatesPolar1;
     private javax.swing.JTextField txtAngle;
+    private javax.swing.JTextField txtAngle1;
     private javax.swing.JTextField txtCoordinateName;
+    private javax.swing.JTextField txtCoordinateName1;
     private javax.swing.JTextField txtCoordinatePolar;
+    private javax.swing.JTextField txtCoordinatePolar1;
     private javax.swing.JTextField txtCoordinateX1;
+    private javax.swing.JTextField txtCoordinateX2;
     private javax.swing.JTextField txtCoordinateY1;
     private javax.swing.JTextField txtCoordinateY2;
+    private javax.swing.JTextField txtCoordinateY3;
+    private javax.swing.JTextField txtCoordinateY4;
     private javax.swing.JTextField txtCoordinatex2;
+    private javax.swing.JTextField txtCoordinatex3;
     private javax.swing.JTextField txtDistance;
+    private javax.swing.JTextField txtDistance1;
     private javax.swing.JTextField txtRectangularCoordinateX;
+    private javax.swing.JTextField txtRectangularCoordinateX1;
     private javax.swing.JTextField txtRectangularCoordinateY;
+    private javax.swing.JTextField txtRectangularCoordinateY1;
     private javax.swing.JTextField txtResult;
+    private javax.swing.JTextField txtResult1;
     private javax.swing.JTextField txtResult2;
+    private javax.swing.JTextField txtResult3;
     // End of variables declaration//GEN-END:variables
 }
