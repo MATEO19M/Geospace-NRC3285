@@ -42,11 +42,10 @@ public class FrmGeoSpace extends javax.swing.JFrame {
         jTable3 = new javax.swing.JTable();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
-        txtAzimutResult = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         cmbResult2 = new javax.swing.JButton();
-        btnAzimut = new javax.swing.JButton();
+        btnASave = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         txtResult = new javax.swing.JTextField();
         txtResult2 = new javax.swing.JTextField();
@@ -118,10 +117,10 @@ public class FrmGeoSpace extends javax.swing.JFrame {
 
         cmbResult2.setText("Result ");
 
-        btnAzimut.setText("Azimut");
-        btnAzimut.addActionListener(new java.awt.event.ActionListener() {
+        btnASave.setText("Save");
+        btnASave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAzimutActionPerformed(evt);
+                btnASaveActionPerformed(evt);
             }
         });
 
@@ -258,19 +257,11 @@ public class FrmGeoSpace extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txtCoordinatex2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel12)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtCoordinateY2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jLabel13)
                                             .addComponent(jLabel10))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txtCoordinateY1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnAzimut)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtAzimutResult, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -284,7 +275,13 @@ public class FrmGeoSpace extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(btnCoordinatePolar)
                                         .addGap(18, 18, 18)
-                                        .addComponent(txtCoordinatePolar)))))
+                                        .addComponent(txtCoordinatePolar))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(btnASave)
+                                            .addComponent(jLabel12))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtCoordinateY2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -378,9 +375,7 @@ public class FrmGeoSpace extends javax.swing.JFrame {
                             .addComponent(jLabel12)
                             .addComponent(txtCoordinateY2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnAzimut)
-                            .addComponent(txtAzimutResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnASave)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnCoordinatePolar)
@@ -391,7 +386,7 @@ public class FrmGeoSpace extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAzimutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAzimutActionPerformed
+    private void btnASaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnASaveActionPerformed
         GeoSpace geoSpace;
         String coordinateName;
         double[] integers;
@@ -410,7 +405,7 @@ public class FrmGeoSpace extends javax.swing.JFrame {
         integers[1] = Integer.parseInt(txtCoordinateY1.getText());
         integers[2] = Integer.parseInt(txtCoordinatex2.getText());
         integers[3] = Integer.parseInt(txtCoordinateY2.getText());
-        coordinatePolar=Integer.parseInt(txtCoordinatePolar.getText());
+        
 
         GeoSpaceController geoSpaceController = new GeoSpaceController();
 
@@ -434,7 +429,7 @@ public class FrmGeoSpace extends javax.swing.JFrame {
             azimut = azimut + 180;
             transformation = "" + String.format("%.2f", azimutResult);
         }
-        txtAzimutResult.setText(transformation);
+      //  txtAzimutResult.setText(transformation);
 
         geoSpace = new GeoSpace(coordinateName, integers[0], integers[1], integers[2], integers[3], azimutResult, coordinatePolar);
         geoSpaceController.saveRectangularToPolarCoordinates(geoSpace);
@@ -448,7 +443,7 @@ public class FrmGeoSpace extends javax.swing.JFrame {
         polar.addElement("Coordinate Polar");
 
 
-    }//GEN-LAST:event_btnAzimutActionPerformed
+    }//GEN-LAST:event_btnASaveActionPerformed
 
     private void btnShowPolarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowPolarActionPerformed
         try {
@@ -531,7 +526,7 @@ public class FrmGeoSpace extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAzimut;
+    private javax.swing.JButton btnASave;
     private javax.swing.JButton btnCoordinatePolar;
     private javax.swing.JButton btnFindCoordinate;
     private javax.swing.JButton btnShowPolar;
@@ -562,7 +557,6 @@ public class FrmGeoSpace extends javax.swing.JFrame {
     private javax.swing.JTable jTable4;
     private javax.swing.JTable tblCoordinatesPolar;
     private javax.swing.JTextField txtAngle;
-    private javax.swing.JTextField txtAzimutResult;
     private javax.swing.JTextField txtCoordinateName;
     private javax.swing.JTextField txtCoordinatePolar;
     private javax.swing.JTextField txtCoordinateX1;

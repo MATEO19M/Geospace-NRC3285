@@ -87,4 +87,20 @@ public class GeoSpaceController {
         return table;
     }
 
+    public void findRectangularToPolarCoordinates(String name) {
+        String projectsName = name;
+        try {
+            BufferedReader read = new BufferedReader(new FileReader("Rectangular to Polar Coordinates.csv"));
+            String line = "";
+            while ((line = read.readLine()) != null) {
+
+                if (line.indexOf(projectsName) != -1) {
+                    System.out.println("se encontro el registro" + line);
+                }
+            }
+        } catch (Exception ex) {
+
+            System.out.println(ex.getMessage());
+        }
+    }
 }
