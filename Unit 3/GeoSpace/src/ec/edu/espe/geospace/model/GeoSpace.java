@@ -11,6 +11,74 @@ package ec.edu.espe.geospace.model;
  */
 public class GeoSpace {
 
+    private double Distance;
+    private double Angle;
+    private String Orientation;
+    private int coordinateRectangular;
+
+    public GeoSpace(double Distance, double Angle, String Orientation, int coordinateRectangular) {
+        this.Distance = Distance;
+        this.Angle = Angle;
+        this.Orientation = Orientation;
+        this.coordinateRectangular = coordinateRectangular;
+    }
+
+    /**
+     * @return the Distance
+     */
+    public double getDistance() {
+        return Distance;
+    }
+
+    /**
+     * @param Distance the Distance to set
+     */
+    public void setDistance(double Distance) {
+        this.Distance = Distance;
+    }
+
+    /**
+     * @return the Angle
+     */
+    public double getAngle() {
+        return Angle;
+    }
+
+    /**
+     * @param Angle the Angle to set
+     */
+    public void setAngle(double Angle) {
+        this.Angle = Angle;
+    }
+
+    /**
+     * @return the Orientation
+     */
+    public String getOrientation() {
+        return Orientation;
+    }
+
+    /**
+     * @param Orientation the Orientation to set
+     */
+    public void setOrientation(String Orientation) {
+        this.Orientation = Orientation;
+    }
+
+    /**
+     * @return the coordinateRectangular
+     */
+    public int getCoordinateRectangular() {
+        return coordinateRectangular;
+    }
+
+    /**
+     * @param coordinateRectangular the coordinateRectangular to set
+     */
+    public void setCoordinateRectangular(int coordinateRectangular) {
+        this.coordinateRectangular = coordinateRectangular;
+    }
+    
     private String coordinateName;
     private double coordinateX1;
     private double coordinateY1;
