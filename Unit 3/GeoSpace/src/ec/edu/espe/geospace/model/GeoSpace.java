@@ -29,6 +29,7 @@ public class GeoSpace {
         this.coordinatePolar = coordinatePolar;
     }
 
+  
     /**
      * @return the coordinateName
      */
