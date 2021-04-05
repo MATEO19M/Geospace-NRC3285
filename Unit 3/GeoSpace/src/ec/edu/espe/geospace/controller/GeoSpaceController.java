@@ -5,10 +5,86 @@
  */
 package ec.edu.espe.geospace.controller;
 
+import ec.edu.espe.geospace.model.GeoSpace;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.StringTokenizer;
+import java.util.Vector;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import utils.FileManager;
+
 /**
  *
  * @author User
  */
 public class GeoSpaceController {
-    
+
+    public double transformGeographicCoordinatesToPolar(double x1, double y1, double x2, double y2) { //Caty
+        double distance;
+        double variationX;
+        double variationY;
+        double azimut = 0;
+
+        variationX = x2 - x1;
+        variationY = y2 - y1;
+        distance = Math.sqrt(Math.pow(variationX, 2) + Math.pow(variationY, 2));
+        azimut = Math.atan(variationX / variationY);
+        azimut = azimut + 360;
+        if (variationX > 0 & variationY >= 0) {
+            System.out.println("" + String.format("%.2f", azimut));
+        }
+        if (variationX > 0 & variationY <= 0) {
+            System.out.println("" + String.format("%.2f", azimut));
+        }
+        if (variationX < 0 & variationY > 0) {
+            azimut = azimut - 180;
+            System.out.println("" + String.format("%.2f", azimut));
+        }
+        if (variationX < 0 & variationY < 0) {
+            azimut = azimut + 180;
+            System.out.println("" + String.format("%.2f", azimut));
+        }
+        return azimut;
+
+    }
+
+    public void saveRectangularToPolarCoordinates(GeoSpace geoSpace) {
+        String Data = geoSpace.getCoordinateName() + "," + geoSpace.getCoordinateX1() + "," + geoSpace.getCoordinateY1() + "," + geoSpace.getCoordinateX2() + "," + geoSpace.getCoordinateY2() + "," + geoSpace.getAzimutResult() + "," + geoSpace.getCoordinatePolar();
+        FileManager.save(Data, "Rectangular to Polar Coordinates");
+    }
+
+    public DefaultTableModel readRectangularToPolarCoordinates() throws FileNotFoundException {
+        Vector polar = new Vector();
+        polar.addElement("Coordinate Name");
+        polar.addElement("Coordinate X1");
+        polar.addElement("Coordinate Y1");
+        polar.addElement("Coordinate X2");
+        polar.addElement("Coordinate Y2");
+        polar.addElement("Azimut");
+        polar.addElement("Coordinate Polar");
+
+        DefaultTableModel table = new DefaultTableModel(polar, 0);
+
+        try {
+            FileReader fr = new FileReader("Rectangular to Polar Coordinates.csv");
+            BufferedReader br = new BufferedReader(fr);
+            String d;
+            while ((d = br.readLine()) != null) {
+                StringTokenizer data = new StringTokenizer(d, ",");
+                Vector x = new Vector();
+                while (data.hasMoreTokens()) {
+                    x.addElement(data.nextToken());
+                }
+                table.addRow(x);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return table;
+    }
+
 }

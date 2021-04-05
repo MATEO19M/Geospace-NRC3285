@@ -107,6 +107,7 @@ public class GeoespaceFunctionsArrays {
                         azimut = transformGeographicCoordinatesToPolar(x1, i, y1, x2, y2, distance);
                         // Transformation from decimals to sexagecimals
                         printDecimalToSexagecimalTransformation(azimut, distance);
+                        
                         break;
                     }
 
