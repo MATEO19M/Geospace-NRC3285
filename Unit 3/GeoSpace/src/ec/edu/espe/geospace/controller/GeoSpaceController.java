@@ -34,17 +34,17 @@ public class GeoSpaceController {
         distance = Math.sqrt(Math.pow(variationX, 2) + Math.pow(variationY, 2));
         azimut = Math.atan(variationX / variationY);
         azimut = azimut + 360;
-        if (variationX > 0 & variationY >= 0) {
-        }
-        if (variationX > 0 & variationY <= 0) {
-        }
-        if (variationX < 0 & variationY > 0) {
-            azimut = azimut - 180;
-        }
-        if (variationX < 0 & variationY < 0) {
-            azimut = azimut + 180;
-        }
-        return azimut;
+//        if (variationX > 0 & variationY >= 0) {
+//        }
+//        if (variationX > 0 & variationY <= 0) {
+//        }
+//        if (variationX < 0 & variationY > 0) {
+//            azimut = azimut - 180;
+//        }
+//        if (variationX < 0 & variationY < 0) {
+//            azimut = azimut + 180;
+//        }
+//        return azimut;
 
     }
 
