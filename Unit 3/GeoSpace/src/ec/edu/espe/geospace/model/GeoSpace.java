@@ -11,16 +11,16 @@ package ec.edu.espe.geospace.model;
  */
 public class GeoSpace {
 
-    private String coordinateName;
+    private double coordinateNumber;
     private double coordinateX1;
     private double coordinateY1;
     private double coordinateX2;
     private double coordinateY2;
     private double  azimutResult;
-    private int coordinatePolar;
+    private double coordinatePolar;
 
-    public GeoSpace(String coordinateName, double coordinateX1, double coordinateY1, double coordinateX2, double coordinateY2, double azimutResult, int coordinatePolar) {
-        this.coordinateName = coordinateName;
+    public GeoSpace(double coordinateName, double coordinateX1, double coordinateY1, double coordinateX2, double coordinateY2, double azimutResult, double coordinatePolar) {
+        this.coordinateNumber = coordinateName;
         this.coordinateX1 = coordinateX1;
         this.coordinateY1 = coordinateY1;
         this.coordinateX2 = coordinateX2;
@@ -31,17 +31,17 @@ public class GeoSpace {
 
   
     /**
-     * @return the coordinateName
+     * @return the coordinateNumber
      */
-    public String getCoordinateName() {
-        return coordinateName;
+    public double getCoordinateNumber() {
+        return coordinateNumber;
     }
 
     /**
-     * @param coordinateName the coordinateName to set
+     * @param coordinateNumber the coordinateNumber to set
      */
-    public void setCoordinateName(String coordinateName) {
-        this.coordinateName = coordinateName;
+    public void setCoordinateNumber(double coordinateNumber) {
+        this.coordinateNumber = coordinateNumber;
     }
 
     /**
@@ -124,7 +124,7 @@ public class GeoSpace {
     /**
      * @param coordinatePolar the coordinatePolar to set
      */
-    public void setCoordinatePolar(int coordinatePolar) {
+    public void setCoordinatePolar(double coordinatePolar) {
         this.coordinatePolar = coordinatePolar;
     }
 

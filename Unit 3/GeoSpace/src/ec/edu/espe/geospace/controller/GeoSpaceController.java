@@ -23,7 +23,7 @@ import utils.FileManager;
  */
 public class GeoSpaceController {
 
-    public double transformGeographicCoordinatesToPolar(double x1, double y1, double x2, double y2) { 
+    public double transformGeographicCoordinatesToPolar(double x1, double y1, double x2, double y2) {
         double distance;
         double variationX;
         double variationY;
@@ -49,13 +49,13 @@ public class GeoSpaceController {
     }
 
     public void saveRectangularToPolarCoordinates(GeoSpace geoSpace) {
-        String Data = geoSpace.getCoordinateName() + "," + geoSpace.getCoordinateX1() + "," + geoSpace.getCoordinateY1() + "," + geoSpace.getCoordinateX2() + "," + geoSpace.getCoordinateY2() + "," + geoSpace.getAzimutResult();
+        String Data = geoSpace.getCoordinateNumber() + "," + geoSpace.getCoordinateX1() + "," + geoSpace.getCoordinateY1() + "," + geoSpace.getCoordinateX2() + "," + geoSpace.getCoordinateY2() + "," + geoSpace.getAzimutResult();
         FileManager.save(Data, "Rectangular to Polar Coordinates");
     }
 
     public DefaultTableModel readRectangularToPolarCoordinates() throws FileNotFoundException {
         Vector polar = new Vector();
-        polar.addElement("Coordinate Name");
+        polar.addElement("Coordinate Number");
         polar.addElement("Coordinate X1");
         polar.addElement("Coordinate Y1");
         polar.addElement("Coordinate X2");
@@ -97,5 +97,16 @@ public class GeoSpaceController {
 
             System.out.println(ex.getMessage());
         }
+    }
+
+    public int findCoordinate(int x, int[] elements) {
+        int i;
+        int n = elements.length;
+        for (i = 0; i < n; i++) {
+            if (elements[i] == x) {
+                return i;
+            }
+        }
+        return -1;
     }
 }
