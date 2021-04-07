@@ -107,7 +107,5 @@ public double calculateAngle2(double x, double y,double angleF2 ){
         }
         return -1;
     }
-}
-    
-    
+}    
 
