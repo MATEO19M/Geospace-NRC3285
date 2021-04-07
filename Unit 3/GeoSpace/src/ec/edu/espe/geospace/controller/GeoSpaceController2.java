@@ -70,8 +70,8 @@ public class GeoSpaceController2 {
             System.out.println(ex.getMessage());
         }
     }
-    public int findCoordinate2(int[] elements, int x){
-        int i;
+    public int findCoordinate2(int x, int[] elements){
+          int i;
         int n = elements.length;
         for (i = 0; i < n; i++){
             if (elements[i] == x){

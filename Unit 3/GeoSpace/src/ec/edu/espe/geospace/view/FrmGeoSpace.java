@@ -5,14 +5,13 @@
  */
 package ec.edu.espe.geospace.view;
 
-import ec.edu.espe.geospace.controller.Find;
+
 import ec.edu.espe.geospace.controller.GeoSpaceController;
 import ec.edu.espe.geospace.controller.GeoSpaceController1;
 import ec.edu.espe.geospace.controller.GeoSpaceController2;
 import ec.edu.espe.geospace.model.GeoSpace;
 import ec.edu.espe.geospace.model.GeoSpace1;
 import ec.edu.espe.geospace.model.GeoSpace2;
-import static java.awt.PageAttributes.MediaType.C;
 import java.io.FileNotFoundException;
 import java.util.Vector;
 import java.util.logging.Level;
@@ -363,7 +362,6 @@ public class FrmGeoSpace extends javax.swing.JFrame {
                 "Distance", "Orientation", "Angle", "Coordinate X", "Coordinate Y"
             }
         ));
-        tblCoordinatesRectangular.setMaximumSize(new java.awt.Dimension(2147483647, 0));
         jScrollPane1.setViewportView(tblCoordinatesRectangular);
 
         btnShow.setText("Show");
@@ -449,7 +447,7 @@ public class FrmGeoSpace extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(765, 1379, Short.MAX_VALUE))
+                        .addGap(765, 1382, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -476,7 +474,7 @@ public class FrmGeoSpace extends javax.swing.JFrame {
                                         .addComponent(jLabel5)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txtRectangularCoordinateX, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 241, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 273, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel17)
                             .addGroup(layout.createSequentialGroup()
@@ -489,11 +487,6 @@ public class FrmGeoSpace extends javax.swing.JFrame {
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(82, 82, 82)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addGap(85, 85, 85)
-                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                            .addComponent(btnSave)
-                                                            .addComponent(txtCoordinateRectangular, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                                         .addGroup(layout.createSequentialGroup()
                                                             .addComponent(jLabel7)
@@ -506,17 +499,21 @@ public class FrmGeoSpace extends javax.swing.JFrame {
                                                     .addGroup(layout.createSequentialGroup()
                                                         .addComponent(jLabel37)
                                                         .addGap(27, 27, 27)
-                                                        .addComponent(cmbOrientation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                                        .addComponent(cmbOrientation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGap(85, 85, 85)
+                                                        .addComponent(btnSave)))
+                                                .addGap(48, 48, 48)))
                                         .addGap(240, 240, 240))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(btnCoordinateRectangular, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                .addGap(42, 42, 42)
-                                                .addComponent(btnFindCoordinate2)
-                                                .addGap(39, 39, 39)
-                                                .addComponent(txtFind2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                            .addComponent(btnCoordinateRectangular, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(btnFindCoordinate2))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtCoordinateRectangular, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtFind2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
                                     .addGroup(layout.createSequentialGroup()
@@ -568,9 +565,9 @@ public class FrmGeoSpace extends javax.swing.JFrame {
                                 .addComponent(btnShowRectangularToGeographic)
                                 .addGap(58, 58, 58)
                                 .addComponent(btnFindCoordinate)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 204, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 236, Short.MAX_VALUE)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(24, 24, 24))
+                                .addGap(21, 21, 21))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(btnShow)
@@ -641,7 +638,7 @@ public class FrmGeoSpace extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(btnFindCoordinate2)
                                     .addComponent(txtFind2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnShow)
@@ -849,16 +846,15 @@ public class FrmGeoSpace extends javax.swing.JFrame {
         double anglery = Math.cos(angler);
         X = distance * anglerx;
         Y = distance * anglery;
-        
-        
+
         if (cmbOrientation.getSelectedItem().equals("North-East (NE)")) {
-            transformation = (" X=" + String.format("%.2f", X) + ", Y=" + String.format("%.2f", Y));
+            transformation = ("X = " + String.format("%.2f", X) + ",  Y = " + String.format("%.2f", Y));
         } else if(cmbOrientation.getSelectedItem().equals("North-West (NO)")) {
-            transformation = ("X=-" + String.format("%.2f", X) + ", Y=" + String.format("%.2f", Y));            
+            transformation = ("X = -" + String.format("%.2f", X) + ",  Y = " + String.format("%.2f", Y));            
         } else if(cmbOrientation.getSelectedItem().equals("South-West (SO)")) {
-            transformation = ("X=-" + String.format("%.2f", X) + ", Y=-" + String.format("%.2f", Y));           
+            transformation = ("X = -" + String.format("%.2f", X) + ",  Y = -" + String.format("%.2f", Y));           
         } else if(cmbOrientation.getSelectedItem().equals("South-East (SE)")) {
-            transformation = ("X=" + String.format("%.2f", X) + ", Y=-" + String.format("%.2f", Y));
+            transformation = ("X = " + String.format("%.2f", X) + ",  Y = -" + String.format("%.2f", Y));
         }
         txtCoordinateRectangular.setText(transformation);
     }//GEN-LAST:event_btnCoordinateRectangularActionPerformed
@@ -909,26 +905,21 @@ public class FrmGeoSpace extends javax.swing.JFrame {
     private void btnFindCoordinate2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindCoordinate2ActionPerformed
 
         int index = 0;
-        Find find = new Find();
-        double distance;
-        double angle;
-        String orientation;
+        GeoSpaceController2 find = new GeoSpaceController2();
+        int[] integers;
         int dataToFind;
         
-        GeoSpaceController2 find2 = new GeoSpaceController2();
+        integers = new int[2];
         
-        dataToFind = Integer.parseInt(btnFindCoordinate2.getText());
-        distance = Double.parseDouble(txtDistance.getText());
-        orientation = cmbOrientation.getSelectedItem().toString();
-        angle = Double.parseDouble(txtAngle.getText());
-        int[] elements = null;
+        dataToFind = Integer.parseInt(txtFind2.getText());
+        integers[0] = Integer.parseInt(txtDistance.getText());
+        integers[1] = Integer.parseInt(txtAngle.getText());
         
-
-        index = find2.findCoordinate2(elements, index) ;
+        index = find.findCoordinate2(dataToFind, integers);
         
-        if (index == -1) {
-            JOptionPane.showMessageDialog(null, dataToFind + " is NOT found ", "Searching", JOptionPane.ERROR_MESSAGE);
-        } else {
+        if(index == -1){
+            JOptionPane.showMessageDialog(null,dataToFind + " is NOT found ","Searching", JOptionPane.WARNING_MESSAGE);
+        }else{
             JOptionPane.showMessageDialog(null, dataToFind + " is found ");
         }
                          
