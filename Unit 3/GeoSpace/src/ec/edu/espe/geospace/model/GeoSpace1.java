@@ -10,10 +10,11 @@ package ec.edu.espe.geospace.model;
  * @author Pc
  */
 public class GeoSpace1 {
-     private double rectangulaCoordinateX;
-  private double rectangulaCoordinateY;
-  private double result;
- private int numberOfTransform;
+
+    private double rectangulaCoordinateX;
+    private double rectangulaCoordinateY;
+    private double result;
+    private int numberOfTransform;
 
     public GeoSpace1(double rectangulaCoordinateX, double rectangulaCoordinateY, double result, int numberOfTransform) {
         this.rectangulaCoordinateX = rectangulaCoordinateX;
@@ -77,8 +78,5 @@ public class GeoSpace1 {
     public void setNumberOfTransform(int numberOfTransform) {
         this.numberOfTransform = numberOfTransform;
     }
- 
+
 }
-
-    
-

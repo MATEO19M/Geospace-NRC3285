@@ -407,7 +407,6 @@
                                                       <Component id="btnSave" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace min="-2" pref="240" max="-2" attributes="0"/>
@@ -452,7 +451,7 @@
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                       <Component id="txtCoordinateX1" max="32767" attributes="0"/>
-                                                      <Component id="txtCoordinateNumber" min="-2" pref="99" max="-2" attributes="0"/>
+                                                      <Component id="txtTransformationNumber" min="-2" pref="99" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
@@ -471,7 +470,7 @@
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Component id="txtCoordinatePolar" max="32767" attributes="0"/>
-                                                      <Component id="txtFindACoordinate" max="32767" attributes="0"/>
+                                                      <Component id="txtFindCoordinateNumber" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                           </Group>
@@ -495,8 +494,8 @@
                               <Component id="btnShowRectangularToGeographic" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                               <Component id="btnFindCoordinate" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="236" max="32767" attributes="0"/>
-                              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="218" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" pref="470" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
@@ -530,7 +529,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtCoordinateNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtTransformationNumber" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
@@ -604,7 +603,7 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtFindACoordinate" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtFindCoordinateNumber" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -801,7 +800,7 @@
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="6" rowCount="0">
-                <Column editable="true" title="Coordinate name" type="java.lang.Object"/>
+                <Column editable="true" title="Coordinate number" type="java.lang.Object"/>
                 <Column editable="true" title="Coordinate X1" type="java.lang.Object"/>
                 <Column editable="true" title="Coordinate Y1" type="java.lang.Object"/>
                 <Column editable="true" title="Coordinate X2" type="java.lang.Object"/>
@@ -868,10 +867,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Coordinate Number"/>
+        <Property name="text" type="java.lang.String" value="Transformation number"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtCoordinateNumber">
+    <Component class="javax.swing.JTextField" name="txtTransformationNumber">
     </Component>
     <Component class="javax.swing.JButton" name="btnCoordinatePolar">
       <Properties>
@@ -1058,10 +1057,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel38">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Find a Coordinate"/>
+        <Property name="text" type="java.lang.String" value="Find coordinate number"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtFindACoordinate">
+    <Component class="javax.swing.JTextField" name="txtFindCoordinateNumber">
     </Component>
   </SubComponents>
 </Form>

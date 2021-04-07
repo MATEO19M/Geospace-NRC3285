@@ -10,7 +10,7 @@ package ec.edu.espe.geospace.model;
  * @author USER
  */
 public class GeoSpace2 {
-    
+
     private double distance;
     private double angle;
     private String orientation;
@@ -95,6 +95,4 @@ public class GeoSpace2 {
         this.Y = Y;
     }
 
-    
 }
-    

@@ -49,13 +49,13 @@ public class GeoSpaceController {
     }
 
     public void saveRectangularToPolarCoordinates(GeoSpace geoSpace) {
-        String Data = geoSpace.getCoordinateNumber() + "," + geoSpace.getCoordinateX1() + "," + geoSpace.getCoordinateY1() + "," + geoSpace.getCoordinateX2() + "," + geoSpace.getCoordinateY2() + "," + geoSpace.getAzimutResult();
+        String Data = geoSpace.getTransformationNumber() + "," + geoSpace.getCoordinateX1() + "," + geoSpace.getCoordinateY1() + "," + geoSpace.getCoordinateX2() + "," + geoSpace.getCoordinateY2() + "," + geoSpace.getAzimutResult();
         FileManager.save(Data, "Rectangular to Polar Coordinates");
     }
 
     public DefaultTableModel readRectangularToPolarCoordinates() throws FileNotFoundException {
         Vector polar = new Vector();
-        polar.addElement("Coordinate Number");
+        polar.addElement("Transformation Number");
         polar.addElement("Coordinate X1");
         polar.addElement("Coordinate Y1");
         polar.addElement("Coordinate X2");
@@ -80,23 +80,7 @@ public class GeoSpaceController {
             JOptionPane.showMessageDialog(null, e);
         }
         return table;
-    }
 
-    public void findRectangularToPolarCoordinates(String name) {
-        String coordinateName = name;
-        try {
-            BufferedReader read = new BufferedReader(new FileReader("Rectangular to Polar Coordinates.csv"));
-            String line = "";
-            while ((line = read.readLine()) != null) {
-
-                if (line.indexOf(coordinateName) != -1) {
-                    System.out.println("se encontro el registro" + line);
-                }
-            }
-        } catch (Exception ex) {
-
-            System.out.println(ex.getMessage());
-        }
     }
 
     public int findCoordinate(int x, int[] elements) {

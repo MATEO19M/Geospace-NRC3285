@@ -11,16 +11,16 @@ package ec.edu.espe.geospace.model;
  */
 public class GeoSpace {
 
-    private double coordinateNumber;
+    private double transformationNumber;
     private double coordinateX1;
     private double coordinateY1;
     private double coordinateX2;
     private double coordinateY2;
-    private double  azimutResult;
+    private double azimutResult;
     private double coordinatePolar;
 
     public GeoSpace(double coordinateName, double coordinateX1, double coordinateY1, double coordinateX2, double coordinateY2, double azimutResult, double coordinatePolar) {
-        this.coordinateNumber = coordinateName;
+        this.transformationNumber = coordinateName;
         this.coordinateX1 = coordinateX1;
         this.coordinateY1 = coordinateY1;
         this.coordinateX2 = coordinateX2;
@@ -29,19 +29,18 @@ public class GeoSpace {
         this.coordinatePolar = coordinatePolar;
     }
 
-  
     /**
-     * @return the coordinateNumber
+     * @return the transformationNumber
      */
-    public double getCoordinateNumber() {
-        return coordinateNumber;
+    public double getTransformationNumber() {
+        return transformationNumber;
     }
 
     /**
-     * @param coordinateNumber the coordinateNumber to set
+     * @param transformationNumber the transformationNumber to set
      */
-    public void setCoordinateNumber(double coordinateNumber) {
-        this.coordinateNumber = coordinateNumber;
+    public void setTransformationNumber(double transformationNumber) {
+        this.transformationNumber = transformationNumber;
     }
 
     /**

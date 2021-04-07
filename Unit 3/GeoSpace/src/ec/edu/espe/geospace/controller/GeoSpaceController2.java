@@ -20,12 +20,12 @@ import utils.FileManager;
  * @author USER
  */
 public class GeoSpaceController2 {
-    
-    public void saveGeographicCoordinatesToRectangular(GeoSpace2 geoSpace2){
+
+    public void saveGeographicCoordinatesToRectangular(GeoSpace2 geoSpace2) {
         String Data = geoSpace2.getDistance() + "," + geoSpace2.getOrientation() + "," + geoSpace2.getAngle() + "," + geoSpace2.getX() + "," + geoSpace2.getY();
         FileManager.save(Data, "Geographic Coordinates to Rectangular");
     }
-    
+
     public DefaultTableModel readGeographicCoordinatesToRectangular() throws FileNotFoundException {
         Vector rectangular = new Vector();
         rectangular.addElement("Distance");
@@ -33,7 +33,6 @@ public class GeoSpaceController2 {
         rectangular.addElement("Angle");
         rectangular.addElement("Coordinate X");
         rectangular.addElement("Coordinate Y");
-
 
         DefaultTableModel table = new DefaultTableModel(rectangular, 0);
 
@@ -53,28 +52,14 @@ public class GeoSpaceController2 {
             JOptionPane.showMessageDialog(null, e);
         }
         return table;
-    }
-    public void findGeographicCoordinatesToRectangular(String name) {
-        String coordinateName = name;
-        try {
-            BufferedReader read = new BufferedReader(new FileReader("Geographic Coordinates to Rectangular.csv"));
-            String line = "";
-            while ((line = read.readLine()) != null) {
 
-                if (line.indexOf(coordinateName) != -1) {
-                    System.out.println("se encontro el registro" + line);
-                }
-            }
-        } catch (Exception ex) {
-
-            System.out.println(ex.getMessage());
-        }
     }
-    public int findCoordinate2(int x, int[] elements){
-          int i;
+
+    public int findCoordinate2(int x, int[] elements) {
+        int i;
         int n = elements.length;
-        for (i = 0; i < n; i++){
-            if (elements[i] == x){
+        for (i = 0; i < n; i++) {
+            if (elements[i] == x) {
                 return i;
             }
         }

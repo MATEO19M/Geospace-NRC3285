@@ -20,7 +20,8 @@ import utils.FileManager;
  * @author Pc
  */
 public class GeoSpaceController1 {
-   public double transformRectangularToGeographicCoordinates(double x, double y, double c) {
+
+    public double transformRectangularToGeographicCoordinates(double x, double y, double c) {
 
         double p1 = x * x;
         double p2 = y * y;
@@ -34,22 +35,22 @@ public class GeoSpaceController1 {
         double angleC = Math.atan(y / x);
         double angle = Math.toDegrees(angleC);
         angleF1 = 90 - angle;
-           
+
         return angleF1;
-}
-public double calculateAngle2(double x, double y,double angleF2 ){
-    
-            double angleC = Math.atan(y / x);
-            double angle = Math.toDegrees(angleC);
-          
-            angleF2 = 90 + angle ;
-           
-            
+    }
+
+    public double calculateAngle2(double x, double y, double angleF2) {
+
+        double angleC = Math.atan(y / x);
+        double angle = Math.toDegrees(angleC);
+
+        angleF2 = 90 + angle;
+
         return angleF2;
-}
+    }
 
     public void saveRectangularToGeographicCoordinates(GeoSpace1 geoSpace) {
-        String Data =geoSpace.getNumberOfTransform()+ ","+ geoSpace.getRectangulaCoordinateX()+ "," + geoSpace.getRectangulaCoordinateY()+ "," + geoSpace.getResult();
+        String Data = geoSpace.getNumberOfTransform() + "," + geoSpace.getRectangulaCoordinateX() + "," + geoSpace.getRectangulaCoordinateY() + "," + geoSpace.getResult();
         FileManager.save(Data, "Rectangular To Geographic Coordinates");
     }
 
@@ -59,8 +60,7 @@ public double calculateAngle2(double x, double y,double angleF2 ){
         polar.addElement("Coordinate X");
         polar.addElement("Coordinate Y");
         polar.addElement("Result");
-        
-      
+
         DefaultTableModel table = new DefaultTableModel(polar, 0);
 
         try {
@@ -81,31 +81,14 @@ public double calculateAngle2(double x, double y,double angleF2 ){
         return table;
     }
 
-    public void findRectangularToGeographicCoordinates(String name) {
-        String projectsName = name;
-        try {
-            BufferedReader read = new BufferedReader(new FileReader("Rectangular To Geographic Coordinates.csv"));
-            String line = "";
-            while ((line = read.readLine()) != null) {
-
-                if (line.indexOf(projectsName) != -1) {
-                    System.out.println("se encontro el registro" + line);
-                }
-            }
-        } catch (Exception ex) {
-
-            System.out.println(ex.getMessage());
-        }
-    }
-         public int findCoordinate(int x, int[] elements){
-          int i;
+    public int findCoordinate(int x, int[] elements) {
+        int i;
         int n = elements.length;
-        for (i = 0; i < n; i++){
-            if (elements[i] == x){
+        for (i = 0; i < n; i++) {
+            if (elements[i] == x) {
                 return i;
             }
         }
         return -1;
     }
-}    
-
+}
